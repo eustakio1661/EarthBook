@@ -8,6 +8,10 @@ body {
   background: #F4F6FA;
 }
 
+body.bg-login{
+	background: #F1F8E9;
+}
+
 .nav-item .nav-link {
   color: var(--font-primary-color)!important;
 }
@@ -141,4 +145,9 @@ body {
   top: 0;
   left: 0;
   border-radius: 15px;*/
+}
+#fontLogin
+{
+	font-family:  'Courier New', Courier, monospace;
+	font-size: 16px;
 }
