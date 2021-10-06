@@ -16,4 +16,9 @@ public class LibroController {
 		model.addAttribute("titulo", "Login");
 		return "login";
 	}
+	@GetMapping({"registro", "", "/"})
+	public String registro(Model model) {
+		model.addAttribute("titulo", "Registro");
+		return "registro";
+	}
 }
