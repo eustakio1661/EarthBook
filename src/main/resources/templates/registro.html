@@ -9,7 +9,7 @@
 	<title>Iniciar Sesión</title>
 </head>
 
-<body class="bg-login">
+<body class="log-reg">
 	<nav th:replace="layout/layout :: nav"></nav>
 	<!--wrapper-->
 	<div class="wrapper">
@@ -102,11 +102,12 @@
 												</div>
 											</div>											
 										</form>
-										<div class="col-12" style="text-align: center;">
-											<button type="submit" class="btn btn-primary" id="fontStyle">
+										<div class="row g-2">
+											<button type="submit" class="btn btn-primary">
 												<i class="bx bxs-lock-open" href="#"></i>Registrarse
 											</button>
-											</div>
+											<p class="login">¿Ya tienes una cuenta? <a href="login">¡Click aquí!</a></p>								
+											</div>											
 									</div>
 								</div>
 							</div>

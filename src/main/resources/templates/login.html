@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +8,7 @@
 	<title>Iniciar Sesión</title>
 </head>
 
-<body class="bg-login">
+<body class="log-reg">
 	<nav th:replace="layout/layout :: nav"></nav>
 	<!--wrapper-->
 	<div class="wrapper">
@@ -27,8 +26,8 @@
 							<div class="card-body">
 								<div class="border p-4 rounded">
 									<div class="text-center">
-										<h3 id="fontStyle">Iniciar Sesión</h3>
-										<p id="fontStyle">¡Bienvenido! Inicie sesión para comenzar, por favor.</p>
+										<h3>Iniciar Sesión</h3>
+										<p>¡Bienvenido! Inicie sesión para comenzar, por favor.</p>
 									</div>
 									<div class="d-flex justify-content-center">
 										<img class="img-fluid" alt="BookStore Logo" src="img/logo/logo.png">
@@ -39,24 +38,24 @@
 									<div class="form-body">
 										<form class="row g-3 needs-validation" action="#" method="POST" novalidate>
 											<div class="col-12">
-												<label for="txtCorreo" class="form-label" id="fontStyle">Correo
+												<label for="txtCorreo" class="form-label">Correo
 													Electrónico:</label>
 												<input type="text" class="form-control"
-													placeholder="Ingrese correo electrónico" id="fontStyle" required />
-												<div class="invalid-feedback" id="fontStyle">
+													placeholder="Ingrese correo electrónico" required />
+												<div class="invalid-feedback">
 													Ingrese un correo válido. Intente otra vez, por favor!'
 												</div>
 											</div>
-											<div class="col-12" id="fontStyle">
+											<div class="col-12">
 												<label for="txtClave" class="form-label">Contraseña:</label>
 												<div class="input-group mb-3" id="show_hide_password">
-													<input type="password" class="form-control" id="fontStyle"
+													<input type="password" class="form-control"
 														placeholder="Ingrese contraseña" aria-label="Ingrese contraseña"
 														aria-describedby="icon-hide" required />
 													<a href="#" class="input-group-text bg-transparent"
 														id="icon-hide"><i class="bx bx-hide"></i>
 													</a>
-													<div class="invalid-feedback" id="fontStyle">
+													<div class="invalid-feedback" >
 														Se requiere una contraseña para el ingreso.
 													</div>
 												</div>
@@ -65,20 +64,20 @@
 												<div class="check form-switch">
 													<input class="form-check-input" type="checkbox" checked />
 													<label class="form-check-label" for="chkRecordarClave"
-														id="fontStyle">Recordar contraseña</label>
+														>Recordar contraseña</label>
 												</div>
 											</div>
 
-											<div class="col-md-6 text-end" id="fontStyle">
+											<div class="col-md-6 text-end">
 												<a href="#">¿Olvidaste tu contraseña?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" class="btn btn-primary" id="fontStyle">
+													<button type="submit" class="btn btn-primary">
 														<i class="bx bxs-lock-open"></i>Iniciar sesión
 													</button>
 													<br>
-													<p class="login" id="fontStyle" style="text-align: center;">¿No
+													<p class="login" style="text-align: center;">¿No
 														tienes una cuenta? <a href="registro">¡Regístrate!</a></p>
 												</div>
 											</div>

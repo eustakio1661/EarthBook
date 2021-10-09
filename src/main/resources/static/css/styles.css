@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #F4F6FA;
+  background: #F1F8E9;
 }
 
 body.bg-login{
@@ -146,10 +146,12 @@ body.bg-login{
   left: 0;
   border-radius: 15px;*/
 }
-#fontStyle,
-li.nav-item,
-label.form-label,
-input.form-control
+.log-reg label,
+.log-reg input,
+.log-reg a,
+.log-reg p,
+.log-reg button,
+.log-reg h3
 {
 	font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 16px;
