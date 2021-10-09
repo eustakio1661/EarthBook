@@ -11,4 +11,9 @@ public class LibroController {
 		model.addAttribute("titulo", "Home");
 		return "index";
 	}
+	@GetMapping({"/catalogo"})
+	public String catalogo(Model model) {
+		model.addAttribute("titulo", "Catalogo");
+		return "catalogo";
+	}
 }
