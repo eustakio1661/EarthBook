@@ -11,4 +11,11 @@ public class LibroController {
 		model.addAttribute("titulo", "Home");
 		return "index";
 	}
+	
+	@GetMapping("registrar")
+	public String registrar(Model model) {
+	    model.addAttribute("titulo", "Registrar");
+	    return "crudlibro";
+	}
+	
 }
