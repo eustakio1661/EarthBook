@@ -17,12 +17,12 @@ public class LibroController {
 		model.addAttribute("titulo", "Catalogo");
 		return "catalogo";
 	}
-	@GetMapping({"login", "", "/"})
+	@GetMapping({"/login"})
 	public String login(Model model) {
 		model.addAttribute("titulo", "Login");
 		return "login";
 	}
-	@GetMapping({"registro", "", "/"})
+	@GetMapping({"/registro"})
 	public String registro(Model model) {
 		model.addAttribute("titulo", "Registro");
 		return "registro";
