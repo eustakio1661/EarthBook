@@ -8,6 +8,10 @@ body {
   background: #F4F6FA;
 }
 
+body.log-reg{
+	background: #F1F8E9;
+}
+
 .nav-item .nav-link {
   color: var(--font-primary-color)!important;
 }
@@ -173,3 +177,15 @@ body {
 	color: #20C997!important;
 }
 
+
+/*.log-reg label,
+.log-reg input,
+.log-reg a,
+.log-reg p,
+.log-reg button,
+.log-reg h3
+{
+	font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 16px;
+	font-style: initial;
+}*/
