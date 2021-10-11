@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head"></head>
+<body>
+	<nav th:replace="layout/layout :: nav"></nav>
+	<div class="container-fluid mt-4">
+      <div class="container shadow-lg bg-white px-4 py-5 rounded-25px">
+      <div class="row">
+	      <aside class="col-md-4 mb-3">	      
+	       <div th:replace="components/components :: accordion-nav"></div>
+	      </aside>
+	      
+		  <main class="col-md-8 mb-3">
+		   <div class="p-4 rounded-25px" style="background:#F4F4F4">
+			<form class="row g-3">
+			  <div class="col-12">
+			    <label for="txtISBN" class="form-label">ISBN</label>
+			    <input type="email" class="form-control" id="txtISBN">
+			  </div>
+			  <div class="col-12">
+			    <label for="txtTitulo" class="form-label">Título</label>
+			    <input type="text" class="form-control" id="txtTitulo">
+			  </div>
+			  <div class="col-md-6">
+			    <label for="cboAutor" class="form-label">Autor</label>
+			    <select id="cboAutor" class="form-select">
+			      <option selected>Seleccione un autor</option>
+			      <option>...</option>
+			    </select>
+			  </div>
+			  <div class="col-md-6">
+			    <label for="cboCategoria" class="form-label">Categoría</label>
+			    <select id="cboCategoria" class="form-select">
+			      <option selected >Seleccione una categoría</option>
+			      <option>...</option>
+			    </select>
+			  </div>
+			  <div class="col-md-4">
+			    <label for="txtPaginas" class="form-label">Páginas</label>
+			    <input type="number" class="form-control" id="txtPaginas">
+			  </div>
+			  <div class="col-md-4">
+			    <label for="txtStock" class="form-label">Stock</label>
+			    <input type="number" class="form-control" id="txtStock">
+			  </div>
+			  <div class="col-md-4">
+			    <label for="txtPrecio" class="form-label">Precio</label>
+			    <input type="number" class="form-control" id="txtPrecio">
+			  </div>
+			  <div class="col-12">
+			    <label for="txtDescripcion" class="form-label">Descripción</label>
+  				<textarea class="form-control" id="txtDescripcion" rows="4"></textarea>
+			  </div>
+			  
+			  <div class="col-12">
+			    <button type="submit" class="btn btn-rounded btn-shadow btn-lg btn-success float-end">Registrar</button>
+			  </div>
+			</form>
+		   </div>
+		  </main>
+      </div>		
+      </div>
+    </div>
+    
+    <div th:replace="layout/layout :: scripts"></div>
+</body>
+</html>
