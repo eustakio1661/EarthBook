@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
     <script src="https://kit.fontawesome.com/2e12710f36.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
     <title th:text="${titulo}"></title>
   </head>
   <body>
@@ -51,13 +51,13 @@
             "
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home">Inicio</a>
+              <a class="nav-link active" aria-current="page" th:href="@{/home}">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Libros</a>
+              <a class="nav-link" th:href="@{/catalogo}">Libros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Categorías</a>
@@ -81,7 +81,7 @@
                 />
               </svg>
             </a>
-            <a href="login" class="btn btn-login btn-outline-success" id="fontStyle">
+            <a th:href="@{/login}" class="btn btn-login btn-outline-success">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
