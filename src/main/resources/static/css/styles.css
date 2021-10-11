@@ -146,7 +146,7 @@ body.log-reg{
   left: 0;
   border-radius: 15px;*/
 }
-/*.log-reg label,
+.log-reg label,
 .log-reg input,
 .log-reg a,
 .log-reg p,
@@ -156,4 +156,4 @@ body.log-reg{
 	font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 16px;
 	font-style: initial;
-}*/
+}
