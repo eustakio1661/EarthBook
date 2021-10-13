@@ -13,13 +13,13 @@
     <title>Carrito de compras</title>
   </head>
   <body>
-  <nav th:replace="layout/layout :: nav"></nav>
+    <nav th:replace="layout/layout :: nav"></nav>
     <div class="card">
       <div class="card-body p-2">
         <h5 class="card-title p-2">CARRITO DE COMPRAS</h5>
         <hr />
         <div class="flex-container">
-          <div class="col-lg-8 p-1">
+          <div class="col-lg-9 p-1">
             <div class="border border-3 p-4 rounded">
               <div class="card-body">
                 <div class="d-flex align-items-center">
@@ -74,7 +74,7 @@
                   </table>
                 </div>
               </div>
-              <div class="checkout-btn d-sm-flex justify-content-end">
+              <div class="checkout-btn d-sm-flex justify-content-between">
                 <div class="single-btn p-1">
                   <div class="d-grid">
                     <button type="submit" class="btn btn-primary">
@@ -94,29 +94,51 @@
                     </button>
                   </div>
                 </div>
+                <button type="submit" class="btn btn-danger">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-x-circle"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                  <i class="bx bxs-lock-open">CANCELAR COMPRA</i>
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 p-1">
+          <div class="col-lg-3 p-1">
             <div class="border border-3 p-4 rounded">
               <div class="card-body">
                 <form>
                   <h5>RESUMEN DE TU PEDIDO</h5>
                   <hr />
-                  <div class="row g-3">
+                  <div class="row g-2" style="height: 600px">
                     <div class="col-md-10">
-                      <label class="mb-3">NOMBRE:</label>
+                      <label class="mb-5">CÓDIGO PRODUCTO:</label>
                       <br />
-                      <label class="mb-3">DISTRITO:</label>
+                      <label class="mb-5">FECHA:</label>
+                      <br />
+                      <label class="mb-5">CLIENTE:</label>
+                      <br />
+                      <label class="mb-5">IMPORTE:</label>
                       <br />
                       <label>DIRECCIÓN:</label>
                     </div>
                     <hr />
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <label>DESCUENTO: </label>
                     </div>
-                    <div class="col-sm-4">
-                        <label>NO APLICA:</label>
+                    <div class="col-sm-6">
+                      <label>NO APLICA:</label>
                     </div>
                     <hr />
                     <div class="col-md-6">
