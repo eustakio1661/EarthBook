@@ -188,3 +188,7 @@ body.log-reg{
         font-family: sans-serif;
         font-size: 15px;
       }
+.table td,
+.table th{
+	text-align: center;
+}
