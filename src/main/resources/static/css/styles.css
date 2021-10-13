@@ -176,3 +176,16 @@ body.log-reg{
 .cursor-pointer:hover a {
 	color: #20C997!important;
 }
+ .flex-container
+      {
+        display: flex;
+        padding: 2px;
+        font-size: 15px;
+        font-family: sans-serif;
+        font: bold 100% monospace;
+        border: 2px solid gray;
+      }
+ .card-body label {
+        font-family: sans-serif;
+        font-size: 15px;
+      }
