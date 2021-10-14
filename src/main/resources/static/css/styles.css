@@ -177,15 +177,6 @@ body.log-reg{
 	color: #20C997!important;
 }
 
-
-/*.log-reg label,
-.log-reg input,
-.log-reg a,
-.log-reg p,
-.log-reg button,
-.log-reg h3
-{
-	font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	font-size: 16px;
-	font-style: initial;
-}*/
+.bg-light-success {
+	background: #E6F0EB!important;
+}
