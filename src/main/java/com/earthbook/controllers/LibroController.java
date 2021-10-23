@@ -12,7 +12,7 @@ public class LibroController {
 		return "index";
 	}
 	
-	@GetMapping("Categorias")
+	@GetMapping("categorias")
 	public String categorias(Model model) {
 		model.addAttribute("titulo", "Categorias");
 		return "Categorias";
