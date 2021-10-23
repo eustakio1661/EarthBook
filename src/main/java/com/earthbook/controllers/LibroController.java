@@ -11,7 +11,7 @@ public class LibroController {
 		model.addAttribute("titulo", "Home");
 		return "index";
 	}
-	@GetMapping({"/catalogo"})
+	@GetMapping({"catalogo"})
 	public String catalogo(Model model) {
 		model.addAttribute("titulo", "Catalogo");
 		return "catalogo";
@@ -30,7 +30,7 @@ public class LibroController {
 	}
 
 	
-	@GetMapping({"registro", "", "/"})
+	@GetMapping({"registro"})
 	public String registro(Model model) {
 		model.addAttribute("titulo", "Registro");
 		return "registro";
