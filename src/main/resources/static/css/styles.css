@@ -333,3 +333,9 @@ input[type="search"]:focus{
 	font-style: initial;
 }*/
 
+/***************************** Autor ********************************/
+
+#btnactA, #btnresA{
+	margin: 5px;
+}
+
