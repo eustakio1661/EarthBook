@@ -411,6 +411,34 @@ input[type="send"]:focus{
 	font-style: initial;
 }*/
 
+
+/***************************** Autor ********************************/
+
+#custom-button {
+  padding: 10px;
+  width: 160px;
+  color: white;
+  background-color: #20C997;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#custom-button:hover {
+  background-color: #00b28f;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+
+
+
 /*******************/
 .btn-comprar {
   background-color: var(--bs-teal);
@@ -445,3 +473,4 @@ input[type="send"]:focus{
   background-color: var(--bs-teal);
   border-color: var(--bs-teal);
 }
+
