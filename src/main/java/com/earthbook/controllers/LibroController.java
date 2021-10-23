@@ -43,7 +43,7 @@ public class LibroController {
 		return "registro";
 	}
 	
-	@GetMapping({"carrito", "", "/"})
+	@GetMapping("carrito")
 	public String carrito(Model model) {
 		model.addAttribute("titulo", "Carrito");
 		return "carrito";
