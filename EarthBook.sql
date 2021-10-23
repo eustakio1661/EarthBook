@@ -53,7 +53,7 @@ CREATE TABLE LIBROS
     ISBN		VARCHAR(20)		NOT NULL UNIQUE,
     SKU			VARCHAR(30)		NOT NULL UNIQUE,
     TITULO VARCHAR(100)  NOT NULL UNIQUE,
-    DESCRIPCION VARCHAR(100)  NOT NULL UNIQUE,
+    DESCRIPCION VARCHAR(350)  NOT NULL UNIQUE,
     PRECIO      DECIMAL(6, 2) NOT NULL CHECK (PRECIO > 0),
     CANTIDAD    TINYINT       NOT NULL CHECK (CANTIDAD >= 0),
     PAGINAS       INT           NOT NULL,
@@ -167,3 +167,42 @@ INSERT INTO DISTRITOS VALUES (NULL,'SANTIAGO DE SURCO');
 INSERT INTO DISTRITOS VALUES (NULL,'SURQUILLO');
 INSERT INTO DISTRITOS VALUES (NULL,'VILLA EL SALVADOR');
 INSERT INTO DISTRITOS VALUES (NULL,'VILLA MARIA DEL TRIUNFO');
+
+INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('ARTE');
+INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('CIENCIAS');
+INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('NOVELA');
+INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('COMICS');
+INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('MANGA');
+
+INSERT INTO AUTORES (DESCRIPCION) VALUES ('CAMUS ALBERT');
+INSERT INTO AUTORES (DESCRIPCION) VALUES ('SEISHI KISHIMOTO');
+INSERT INTO AUTORES (DESCRIPCION) VALUES ('JIE ZHANG');
+INSERT INTO AUTORES (DESCRIPCION) VALUES ('MOLDES DIEGO');
+INSERT INTO AUTORES (DESCRIPCION) VALUES ('GRANDES IDEAS CIENCIA');
+
+INSERT INTO EDITORIALES (DESCRIPCION) VALUES ('RBA LIBROS');
+
+INSERT INTO ESTADOS (DESCRIPCION) VALUES ('ACTIVO');
+INSERT INTO ESTADOS (DESCRIPCION) VALUES ('INACTIVO');
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788496130965','9788496130965','ARQUIMEDES','Arquímides de Siracusa vivió en tiempos de guerra, por lo que no debe extrañarnos que empleara parte de su genio en diseñar ingeniosas máquinas para la defensa de su ciudad natal.',
+14.39,10,152,5,1,2);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788493722838','9788493722838','FALTAN PALABRAS','Una saga generacional femenina que habla de la capacidad de la mujer para sobrevivir a privaciones de toda índole, adaptarse a situaciones particulares o protagonizar el cambio hacia el pensamiento moderno, en un recorrido que nos permite conocer la evolución social de China durante todo el siglo XX.',
+14.39,10,333,3,1,3);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788483579312','9788483579312','666 SATAN 01','El éxito de ventas del hermano gemelo del creador de Naruto. 666 Satan recuerda por su dibujo y por el tipo de historia a Naruto. Por ello, cuando salió en Japón, algunos lectores acusaron a Seishi de plagiar a su hermano Masashi.',
+21.77,10,192,2,1,5);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
+VALUES ('9789807716284','9789807716284','PESTE','La peste no es una novela sobre las relaciones entre literatura y ciencia, refiere la peste que apodera de la ciudad de Orán, entonces francesa, en los años de la segunda guerra mundial.',
+12.47,10,150,1,1,2);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788437630410','9788437630410','ALEJANDRO JODOROWSKY','El cine es una de las muchas disciplinas artísticas que ha cultivado Alejandro Jodorowsky desde hace más de sesenta años. Personaje proteico, escritor (novelista, ensayista, dramaturgo…), autor y guionista de cómics',
+73.25,10,496,2,1,4);
+
+
