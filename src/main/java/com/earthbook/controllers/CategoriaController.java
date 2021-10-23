@@ -35,6 +35,7 @@ public class CategoriaController {
 	
 	@GetMapping("categoria/listado")
     public String listadoCategoria(Model model) {
+		model.addAttribute("lstCategorias", repoCat.findAll());
         model.addAttribute("titulo", "Listado de Categorias");
         return "listadoCategoria";
     }

@@ -1,5 +1,6 @@
 package com.earthbook.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import com.earthbook.repository.IAutorRepository;
 @Controller()
 public class AutorController {
 	
+	@Autowired
 	private IAutorRepository repoAut;
 
 	@GetMapping("autor/registrar")
@@ -30,7 +32,7 @@ public class AutorController {
 	
 	@GetMapping("autor/listado")
     public String listadoAutor(Model model) {
-        model.addAttribute("titulo", "Listado de libros");
+		model.addAttribute("lstAutores", repoAut.findAll());
         return "listadoautores";
     }
 

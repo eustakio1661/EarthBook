@@ -23,11 +23,12 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr th:each="a : ${lstautores}">
-			      <th scope="row">1</th>
-			      <td>Harry Potter y la piedra filosofal</td>
+			    <tr th:each="a : ${lstAutores}">
+			      <td th:text="${a.nombre}"></td>
+			      <td th:text="${a.urlImagen}"></td>
+			      <!--<td>Harry Potter y la piedra filosofal</td>
 			      <tdth:text="${a.descripcion}"></td>
-			      <td>S/120.10</td>
+			      <td>S/120.10</td>-->
 			      <td>
 			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>
 			        <a class="btn btn-success">

@@ -14,7 +14,7 @@
 
 				<main class="col-md-8 mb-3">
 					<div class="p-4 rounded-25px" style="background:#F4F4F4">
-						<form th:action="@{grabar}" method"post" th:object="${categoria}" class="row g-3">
+						<form th:action="@{grabar}" method="post" th:object="${categoria}" class="row g-3">
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Categoría</label>
 								<input type="text" class="form-control" id="txtNombreCat" th:field="*{descripcion}">
