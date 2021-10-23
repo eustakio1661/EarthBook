@@ -14,22 +14,19 @@
 
 				<main class="col-md-8 mb-3">
 					<div class="p-4 rounded-25px" style="background:#F4F4F4">
-						<form class="row g-3">
+						<form th:action="@{grabar}" method"post" th:object="${categoria}" class="row g-3">
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Categoría</label>
-								<input type="email" class="form-control" id="txtISBN">
+								<input type="text" class="form-control" id="txtNombreCat" th:field="*{descripcion}">
 							</div>
 							
-							<!--<div class="col-12">
-								<label for="txtDescripcion" class="form-label">Descripción</label>
-								<textarea class="form-control" id="txtDescripcion" rows="4"></textarea>
-							</div>-->
+							<input accept="image/*" id="archivo" name="archivo" type="file" value="" th:field="*{urlImagen}">
 							
-							<div col-md-6 col-sm-6 col-xs-6>
-							<input type="file" id="real-file" hidden="hidden" />
+							<!--<div col-md-6 col-sm-6 col-xs-6>
+							<input type="file" id="real-file" hidden="hidden"/>
 							<button type="button" id="custom-button">Subir Imagen...</button>
 							<span id="custom-text">No se eligió archivo.</span>
-							</div>
+							</div>-->
 
 							<div class="col-12">
 								<button id="btnresA" type="submit"

@@ -23,7 +23,7 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
+			    <tr th:each="a : ${lstautores}">
 			      <th scope="row">1</th>
 			      <td>Harry Potter y la piedra filosofal</td>
 			      <tdth:text="${a.descripcion}"></td>
