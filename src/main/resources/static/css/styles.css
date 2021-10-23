@@ -284,6 +284,10 @@ input[type="search"]:focus{
 	text-align: center;
 }
 
+.bg-light-success {
+	background: #E6F0EB!important;
+}
+
 */
 
 /*.log-reg label,
@@ -297,5 +301,3 @@ input[type="search"]:focus{
 	font-size: 16px;
 	font-style: initial;
 }*/
-
-

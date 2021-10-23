@@ -25,13 +25,19 @@ public class LibroController {
 	    return "crudlibro";
 	}
 	
+	@GetMapping("libro/listado")
+    public String listado(Model model) {
+        model.addAttribute("titulo", "Listado de libros");
+        return "listadolibros";
+    }
+	
 	@GetMapping("login")
 	public String login(Model model) {
 		model.addAttribute("titulo", "Login");
 		return "login";
 	}
 	
-	@GetMapping({"registro", "", "/"})
+	@GetMapping("registro")
 	public String registro(Model model) {
 		model.addAttribute("titulo", "Registro");
 		return "registro";
