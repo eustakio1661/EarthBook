@@ -334,8 +334,57 @@ input[type="search"]:focus{
 }*/
 
 /***************************** Autor ********************************/
-
-#btnactA, #btnresA{
-	margin: 5px;
+/*
+.custom-input-file {
+  background-color: #20C997;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 300px;
 }
 
+.custom-input-file .input-file {
+ border: 10000px solid transparent;
+ cursor: pointer;
+ font-size: 10000px;
+ margin: 0;
+ opacity: 0;
+ outline: 0 none;
+ padding: 0;
+ position: absolute;
+ right: -1000px;
+ top: -1000px;
+}*/
+
+#custom-button {
+  padding: 10px;
+  width: 160px;
+  color: white;
+  background-color: #20C997;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#custom-button:hover {
+  background-color: #00b28f;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+
+
+/**/
