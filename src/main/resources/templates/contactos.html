@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout::head"></head>
+
+<body>
+
+	<nav th:replace="layout/layout :: nav"></nav>
+	<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+		<div class="row align-items-center g-lg-5 py-5">
+			<div class="col-lg-7 text-center text-lg-start">
+				<h1 class="display-4 fw-bold lh-1 mb-3">Contactenos</h1>
+				<p class="col-lg-10 fs-4">Estas buscando un titulo y no lo encuentras, escribenos y te ayudaremos.</p>
+				<div>
+					<a class="navbar-brand" href="#" id="fontStyle"> Jr. Uruguay 514 Lima 🌐 </a>
+				</div>
+				<div>
+					<a class="navbar-brand" href="#" id="fontStyle"> Pueblo Libre – 21 Lima 📧 </a>
+				</div>
+				<div>
+					<a class="navbar-brand" href="#" id="fontStyle"> 914-790-000 📱 </a>
+				</div>
+				
+				<img class ="card-enviar-container mt-3" src="https://avante.biz/wp-content/uploads/In-a-nutshell-wallpaper/In-a-nutshell-wallpaper27.jpg">
+				
+			</div>
+			<div class="col-md-10 mx-auto col-lg-5">
+				<form class="p-4 p-md-5 border rounded-3 bg-light">
+					<div class="form-floating mb-3">
+						<input type="send" class="form-control" id="send" placeholder="...">
+						<label>Nombre</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="send" class="form-control" id="send" placeholder="...">
+						<label>Correo electrónico</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="send" class="form-control" id="sendt" placeholder="...">
+						<label>Escriba titulo e información</label>
+					</div>
+					<div class="checkbox mb-3">
+						<label>
+							<input type="checkbox" value="remember-me"> Grabar informacion
+						</label>
+					</div>
+					<div class="env">
+						<div class="cont">
+							<div class="cont-der">
+							<small class="text-muted">Click para aceptar nuestros terminos.</small>
+							<button type="button" id="sendb">Enviar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div th:replace="layout/layout :: scripts"></div>
+
+</body>
+
+</html>
