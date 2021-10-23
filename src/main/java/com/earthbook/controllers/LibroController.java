@@ -5,7 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.earthbook.models.Libro;
 import com.earthbook.repository.IAutorRepository;
@@ -14,6 +17,7 @@ import com.earthbook.repository.IEditorialRepository;
 import com.earthbook.repository.ILibroRepository;
 
 @Controller()
+@SessionAttributes("libro")
 public class LibroController {
     
     @Autowired
@@ -60,25 +64,61 @@ public class LibroController {
 	}
 	
 	@PostMapping("libro/guardar")
-	public String guardar(@ModelAttribute Libro libro, Model model) {
-	    
-	    libro.setSKU(libro.getISBN());
-	    libro.setUrlImagen("FALTA_URL");
-	    
-	    System.out.println(libro);
-	    
+	public String guardar(@ModelAttribute Libro libro, Model model, SessionStatus status) {
+
 	    model.addAttribute("lstCategoria", repoCat.findAll());
         model.addAttribute("lstEditoriales", repoEditorial.findAll());
         model.addAttribute("lstAutores", repoAutor.findAll());
 	    
-	    model.addAttribute("accionBtn", "Registrar");
+        model.addAttribute("tipoMensaje", "success");
+        
+        System.out.println("LIBRO ID: " + libro.getId());
+        
+        if(libro.getId() != 0) {
+            model.addAttribute("accionBtn", "Actualizar");
+            model.addAttribute("mensaje", "Libro actualizado correctamente");
+            
+        } else {
+            model.addAttribute("accionBtn", "Registrar");
+            model.addAttribute("mensaje", "Libro registrado correctamente");
+            model.addAttribute("libro", new Libro());
+        }
+        
+        libro.setSKU(libro.getISBN());
+        libro.setUrlImagen("FALTA_URL");
+        libro.setIdEstado(1);
+        
+        repoLibro.save(libro);
+	    
 	    return "crudlibro";
 	}
 	
 	@GetMapping("libro/listado")
     public String listado(Model model) {
         model.addAttribute("titulo", "Listado de libros");
+        model.addAttribute("lstLibros", repoLibro.findAll());
         return "listadolibros";
+    }
+	
+	@GetMapping("libro/editar/{id}")
+    public String editar(@PathVariable(value="id") String id, Model model) {	    
+	    
+        if(!id.matches("[1-9]+")) return "redirect:/libro/listado";
+
+        Libro libro = repoLibro.findById(Integer.parseInt(id)).orElse(null);  
+
+        if(libro == null) return "redirect:/libro/listado";
+	    
+        model.addAttribute("titulo", "Editar libro");
+        
+        model.addAttribute("lstCategoria", repoCat.findAll());
+        model.addAttribute("lstEditoriales", repoEditorial.findAll());
+        model.addAttribute("lstAutores", repoAutor.findAll());        
+        model.addAttribute("libro", libro);
+        
+        model.addAttribute("accionBtn", "Actualizar");
+        
+        return "crudlibro";
     }
 	
 	@GetMapping("login")
@@ -87,7 +127,6 @@ public class LibroController {
 		return "login";
 	}
 
-	
 	@GetMapping({"registro"})
 	public String registro(Model model) {
 		model.addAttribute("titulo", "Registro");
