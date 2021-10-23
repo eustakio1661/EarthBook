@@ -17,11 +17,24 @@ public class LibroController {
 		return "catalogo";
 	}
 	
+	@GetMapping("categorias")
+	public String categorias(Model model) {
+		model.addAttribute("titulo", "Categorias");
+		return "Categorias";
+	}
+	
+	
 	@GetMapping("libro/registrar")
 	public String registrar(Model model) {
 	    model.addAttribute("titulo", "Registrar");
 	    return "crudlibro";
 	}
+	
+	@GetMapping("libro/listado")
+    public String listado(Model model) {
+        model.addAttribute("titulo", "Listado de libros");
+        return "listadolibros";
+    }
 	
 	@GetMapping("login")
 	public String login(Model model) {
@@ -36,5 +49,13 @@ public class LibroController {
 		return "registro";
 
 	}
+	
+	@GetMapping({"carrito", "", "/"})
+	public String carrito(Model model) {
+		model.addAttribute("titulo", "Carrito");
+		return "carrito";
+	}
 
 }
+
+
