@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Autor {
 
     @Id
-    @Column(name = "ID_CAT")
+    @Column(name = "ID_AU")
     private int id;
     
     @Column(name = "DESCRIPCION")
