@@ -34,7 +34,6 @@ CREATE TABLE CATEGORIAS
     IMAGEN 	VARCHAR(1000) NOT NULL DEFAULT "https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png"
 );
 
-
 CREATE TABLE AUTORES
 (
     ID_AU       INT PRIMARY KEY AUTO_INCREMENT,
