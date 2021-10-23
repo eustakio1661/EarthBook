@@ -12,6 +12,13 @@ public class LibroController {
 		return "index";
 	}
 	
+	@GetMapping("Categorias")
+	public String categorias(Model model) {
+		model.addAttribute("titulo", "Categorias");
+		return "Categorias";
+	}
+	
+	
 	@GetMapping("libro/registrar")
 	public String registrar(Model model) {
 	    model.addAttribute("titulo", "Registrar");
@@ -35,5 +42,13 @@ public class LibroController {
 		model.addAttribute("titulo", "Registro");
 		return "registro";
 	}
+	
+	@GetMapping({"carrito", "", "/"})
+	public String carrito(Model model) {
+		model.addAttribute("titulo", "Carrito");
+		return "carrito";
+	}
 
 }
+
+
