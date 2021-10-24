@@ -16,16 +16,16 @@
 			  <thead>
 			    <tr>
 			      <th class="bg-light-success" scope="col">Autor</th>
-			      <th class="bg-light-success" scope="col">Nombre Autor</th>
+			      <th class="bg-light-success" scope="col">Nombre Categoría</th>
 			      <th class="bg-light-success"></th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr th:each="a : ${lstAutores}">
-			      <td><img alt="" th:src="${a.urlImagen}" width="100px"></td>
-			      <td th:text="${a.nombre}"></td>
+			    <tr th:each="c : ${lstCategorias}">
+			      <td><img alt="" th:src="${c.urlImagen}" width="100px"></td>
+			      <td th:text="${c.descripcion}"></td>
 			      <td>
-			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>
+			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>	
 			        <a class="btn btn-success">
 			       		<i class="fas fa-edit"></i>
 			        </a>

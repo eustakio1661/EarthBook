@@ -3,6 +3,7 @@ package com.earthbook.controllers;
 import com.earthbook.models.Categoria;
 
 import com.earthbook.repository.ICategoriaRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +37,14 @@ public class CategoriaController {
 	@GetMapping("categoria/listado")
     public String listadoCategoria(Model model) {
 		model.addAttribute("lstCategorias", repoCat.findAll());
-        model.addAttribute("titulo", "Listado de Categorias");
-        return "listadoCategoria";
+        return "listadocategoria";
     }
+	
+	@PostMapping("categoria/editar")
+	public String buscarCat(@ModelAttribute Categoria c, Model model) {
+		System.out.println();
+		model.addAttribute("categoria", repoCat.findById(c.getId()));
+		return "crudcategoria";
+	}
 
 }

@@ -19,6 +19,7 @@ public class AutorController {
 	@GetMapping("autor/registrar")
 	public String registrar(Model model) {
 	    model.addAttribute("titulo", "Registrar");
+	    model.addAttribute("autor", new Autor());
 	    return "crudautor";
 	}
 	
