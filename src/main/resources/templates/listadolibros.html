@@ -23,42 +23,18 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td>Harry Potter y la piedra filosofal</td>
-			      <td>12</td>
-			      <td>S/120.10</td>
+			    <tr th:each="l : ${lstLibros}">
+			      <th scope="row" th:text="${l.id}"></th>
+			      <td th:text="${l.titulo}"></td>
+			      <td th:text="${l.cantidad}"></td>
+			      <td th:text="${l.precio}"></td>
 			      <td>
 			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>
-			        <a class="btn btn-success">
+			        <a class="btn btn-success" th:href="'editar/'+${l.id}">
 			       		<i class="fas fa-edit"></i>
 			        </a>
 			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Canción de hielo y fuego</td>
-			      <td>8</td>
-			      <td>S/180.25</td>
-			      <td>
-			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>
-			        <a class="btn btn-success">
-			       		<i class="fas fa-edit"></i>
-			        </a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td>The Witcher</td>
-			      <td>5</td>
-			      <td>S/90.36</td>
-			      <td>
-			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>
-			        <a class="btn btn-success">
-			       		<i class="fas fa-edit"></i>
-			        </a>
-			      </td>
-			    </tr>
+			    </tr>			    
 			  </tbody>
 			</table>
 		   </div>
