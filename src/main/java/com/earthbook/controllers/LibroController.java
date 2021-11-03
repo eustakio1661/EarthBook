@@ -36,20 +36,6 @@ public class LibroController {
         return "listadolibros";
     }
 	
-	@GetMapping("login")
-	public String login(Model model) {
-		model.addAttribute("titulo", "Login");
-		return "login";
-	}
-
-	
-	@GetMapping({"registro"})
-	public String registro(Model model) {
-		model.addAttribute("titulo", "Registro");
-		return "registro";
-
-	}
-	
 	@GetMapping("carrito")
 	public String carrito(Model model) {
 		model.addAttribute("titulo", "Carrito");
