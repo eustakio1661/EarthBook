@@ -15,26 +15,22 @@
 			<table id="tableBooks" class="table text-nowrap" style="background: white;">
 			  <thead>
 			    <tr>
-			      <th class="bg-light-success" scope="col">Id</th>
-			      <th class="bg-light-success" scope="col">Libro</th>
-			      <th class="bg-light-success" scope="col">Stock</th>
-			      <th class="bg-light-success" scope="col">Precio</th>
+			      <th class="bg-light-success" scope="col">Autor</th>
+			      <th class="bg-light-success" scope="col">Nombre Autor</th>
 			      <th class="bg-light-success"></th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr th:each="l : ${lstLibros}">
-			      <th scope="row" th:text="${l.id}"></th>
-			      <td th:text="${l.titulo}"></td>
-			      <td th:text="${l.cantidad}"></td>
-			      <td th:text="${l.precio}"></td>
+			    <tr th:each="a : ${lstAutores}">
+			      <td><img alt="" th:src="${a.urlImagen}" width="100px"></td>
+			      <td th:text="${a.nombre}"></td>
 			      <td>
 			        <a class="btn btn-danger me-2"><i class="fas fa-trash-alt"></i></a>
-			        <a class="btn btn-success" th:href="'editar/'+${l.id}">
+			        <a class="btn btn-success">
 			       		<i class="fas fa-edit"></i>
 			        </a>
 			      </td>
-			    </tr>			    
+			    </tr>
 			  </tbody>
 			</table>
 		   </div>

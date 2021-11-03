@@ -2,6 +2,8 @@ package com.earthbook.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +13,7 @@ public class Libro {
 
     @Id
     @Column(name = "ID_LI")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String ISBN;
@@ -65,6 +68,14 @@ public class Libro {
         this.idEditorial = idEditorial;
         this.idCategoria = idCategoria;
         this.idEstado = idEstado;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro [id=" + id + ", ISBN=" + ISBN + ", SKU=" + SKU + ", titulo=" + titulo + ", descripcion="
+                + descripcion + ", precio=" + precio + ", cantidad=" + cantidad + ", paginas=" + paginas
+                + ", urlImagen=" + urlImagen + ", idAutor=" + idAutor + ", idEditorial=" + idEditorial
+                + ", idCategoria=" + idCategoria + ", idEstado=" + idEstado + "]";
     }
 
     public int getId() {
