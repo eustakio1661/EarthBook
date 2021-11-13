@@ -146,6 +146,11 @@ public class LibroController {
 		return "contactos";
 	}
 
+	@GetMapping({"verLibro"})
+	public String verlibro(Model model) {
+		model.addAttribute("titulo", "Ver Libro");
+		return "verlibro";
+	}
 }
 
 

@@ -187,6 +187,8 @@ INSERT INTO EDITORIALES (DESCRIPCION) VALUES ('RBA LIBROS');
 INSERT INTO ESTADOS (DESCRIPCION) VALUES ('ACTIVO');
 INSERT INTO ESTADOS (DESCRIPCION) VALUES ('INACTIVO');
 
+SELECT * FROM LIBROS;
+
 INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
 VALUES ('9788496130965','9788496130965','ARQUIMEDES','Arquímides de Siracusa vivió en tiempos de guerra, por lo que no debe extrañarnos que empleara parte de su genio en diseñar ingeniosas máquinas para la defensa de su ciudad natal.',
 14.39,10,152,5,1,2);
