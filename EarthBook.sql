@@ -55,7 +55,7 @@ CREATE TABLE LIBROS
     ISBN		VARCHAR(20)		NOT NULL UNIQUE,
     SKU			VARCHAR(30)		NOT NULL UNIQUE,
     TITULO VARCHAR(100)  NOT NULL UNIQUE,
-    DESCRIPCION VARCHAR(350)  NOT NULL UNIQUE,
+    DESCRIPCION VARCHAR(350)  NOT NULL,
     PRECIO      DECIMAL(6, 2) NOT NULL CHECK (PRECIO > 0),
     CANTIDAD    TINYINT       NOT NULL CHECK (CANTIDAD >= 0),
     PAGINAS       INT           NOT NULL,
@@ -196,25 +196,88 @@ INSERT INTO ESTADOS (DESCRIPCION) VALUES ('INACTIVO');
 SELECT * FROM LIBROS;
 SELECT * FROM CATEGORIAS;
 
-INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
-VALUES ('9788496130965','9788496130965','ARQUIMEDES','Arquímides de Siracusa vivió en tiempos de guerra, por lo que no debe extrañarnos que empleara parte de su genio en diseñar ingeniosas máquinas para la defensa de su ciudad natal.',
-14.39,10,152,5,1,2);
 
-INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
-VALUES ('9788493722838','9788493722838','FALTAN PALABRAS','Una saga generacional femenina que habla de la capacidad de la mujer para sobrevivir a privaciones de toda índole, adaptarse a situaciones particulares o protagonizar el cambio hacia el pensamiento moderno, en un recorrido que nos permite conocer la evolución social de China durante todo el siglo XX.',
-14.39,10,333,3,1,3);
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9786124017032','9786124017032','LIMA CIUDAD DE REYES - CITY OF KING','Hayuna Lima que no cambia. Rica, sobria e impresionante. Una Lima que, a pesar del tiempo, vive como en los valses, olorosa y señorial. Vestigios de una ciudad gobernada por virreyes y señoríos llegan hasta nuestro tiempo para hablarnos de un pasado glorioso que se fue.',
+182.00,20,170,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636815303/DAWI/lima-ciudad-reyes-city-kings-9786124017032-libro-ca01_gifowd.jpg',1,1,1);
 
-INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
-VALUES ('9788483579312','9788483579312','666 SATAN 01','El éxito de ventas del hermano gemelo del creador de Naruto. 666 Satan recuerda por su dibujo y por el tipo de historia a Naruto. Por ello, cuando salió en Japón, algunos lectores acusaron a Seishi de plagiar a su hermano Masashi.',
-21.77,10,192,2,1,5);
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9786124681103','9786124681103','HERNÁN PAZOS. PINTURAS 1980-2007','-',
+240.00,10,322,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636815303/DAWI/hernan-pazos-pinturas-1980-2007-9786124681103-libro-ca01_kekgdl.jpg',2,1,1);
 
-INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
-VALUES ('9789807716284','9789807716284','PESTE','La peste no es una novela sobre las relaciones entre literatura y ciencia, refiere la peste que apodera de la ciudad de Orán, entonces francesa, en los años de la segunda guerra mundial.',
-12.47,10,150,1,1,2);
 
-INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
-VALUES ('9788437630410','9788437630410','ALEJANDRO JODOROWSKY','El cine es una de las muchas disciplinas artísticas que ha cultivado Alejandro Jodorowsky desde hace más de sesenta años. Personaje proteico, escritor (novelista, ensayista, dramaturgo…), autor y guionista de cómics',
-73.25,10,496,2,1,4);
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788433975157','9788433975157','VILLA TRISTE','Principios de los años sesenta, en el siglo pasado. Un joven de dieciocho años al que el lector solo conocerá bajo una identidad ficticia, la de conde Victor Chmara, se esconde del horror de la guerra franco-argelina en una pequeña ciudad de provincias cercana a la frontera con Suiza.',
+65.00,5,192,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816082/DAWI/villa-triste-9788433975157-libro-ca01_ypt0cs.jpg',3,1,3);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788433979810','9788433979810','SON COSAS QUE PASAN','París, 1945. En la iglesia de Saint-Pierre-de-Chaillot, ubicada en uno de los barrios más elegantes de la ciudad, se celebra un funeral. La difunta es la princesa Natalie de Lusignan, duquesa de Sorrente, que ha fallecido demasiado joven.',
+62.00,15,168,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816082/DAWI/villa-triste-9788433975157-libro-ca01_ypt0cs.jpg',4,1,3);
+
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788417179052','9788417179052','YOUR NAME 1','El encuentro de dos jóvenes desencontrados. Nos situamos en Japón, un mes antes de la llegada de un cometa que pasa una vez cada mil años. Mitsuha, una estudiante de tercer año que vive en un pueblo en lo profundo de las montañas, pasa sus días con melancolía. ',
+36.00,23,200,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816478/DAWI/your-name-1-9788417179052-libro-ca01_ae7xj2.jpg',4,1,5);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9786075284545','9786075284545','ATAQUE DE LOS TITANES BEFORE THE FALL 08','Sharle espera en el taller el regreso de Kuklo, quien fue a Shiganshina a probar el nuevo modelo del dispositivo. Sin embargo, aunque llegó el día en que estaba programado su regreso, él no apareció. ',
+29.00,10,224,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816425/DAWI/ataque-titanes-before-the-fall-08-9786075284545-libro-ca01_bmg3cx.jpg',5,1,5);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788497593793','9788497593793','IT','Quién o qué mutila y mata a los niños de un pequeño pueblo norteamericano? ¿Por qué llega cíclicamente el horror a Derry en forma de un payaso siniestro que va sembrando la destrucción a su paso? Esto es lo que se proponen averiguar los protagonistas de esta novela. ',
+89.00,6,1504,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816983/DAWI/it-9788497593793-libro-ca01_blrziy.jpg',2,1,7);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9788492892884','9788492892884','CUENTOS DE TERROR','No nos cabe la menor duda que, durante la lectura de estas páginas, verá cómo su adrenalina sube por momentos y cómo le invade un inmenso placer después de cada escena terrorífica, porque en el libro que tiene usted en sus manos están contenidas las historias más espeluznantes de los mejores maestros del género de todos los tiempos.',
+9.90,8,1504,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816983/DAWI/cuentos-terror-9788492892884-libro-ca01_l4z9da.jpg',3,1,7);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9786073142557','9786073142557','JUEGO DE TRONOS PARA LOS NEGOCIOS','Juego de tronos para los negocios retoma cinco estrategias del universo creado por George R. R. Martin que te convertirán en el rey de tu propia empre…',
+59.00,2,160,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636817383/DAWI/juego-tronos-para-negocios-9786073142557-libro-ca01_e3czjw.jpg',2,1,9);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9786077444008','9786077444008','PLAN ESTRATÉGICO DE NEGOCIOS','En este libro el autor explica el contenido de un plan de negocios estratégico, base para ser tomado en cuenta por todo emprendedor de negocios o para empresas ya en marcha que buscan emprender otras líneas de producto o servicios.',
+55.00,5,300,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636817374/DAWI/plan-estrategico-negocios-9786077444008-libro-ca01_eje7up.jpg',3,1,9);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874521368','9786169874523','LA EDUCACION DE LOS HIJOS COMO LOS PIMIENTOS DE PADRON','-',
+80.00,15,139,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/ciencia_1_gviicm.jpg',1,1,2);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265878989588','9786133396523','PITAGORAS Y SU TEOREMA EN 90 MINUTOS','-',
+60.00,23,100,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/ciencia_2_t6gdjn.jpg',2,1,2);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96665878989588','9786133390000','MAS RAPIDO QUE LA LUZ','-',
+95.00,26,70,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/comics_1_psiv8i.jpg',3,1,4);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96662678989588','9555533390000','LOS DESAFIOS DE LEX LUTHOR','-',
+90.00,26,70,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/comics_2_o3ftor.jpg',3,1,4);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96663263269578','9359687390000','LA COCINA DEL PERU','-',
+120.00,32,150,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/cocina_1_vic4ia.jpg',2,1,6);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874333988','9786100036523','COCINA CRIOLLA','-',
+80.00,15,139,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/cocina_2_xhk6aq.jpg',2,1,6);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874333688','9786100031123','CUENTOS CLASICOS JUVENILES','-',
+96.00,50,190,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/juvenil_1_kf5ysp.jpg',1,1,8);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874333454','9789300036503','JOVENES AUNQUE SOBRADAMENTE CABREADOS','-',
+102.00,35,169,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/juvenil_2_tikgld.jpg',4,1,8);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96319874333454','9789300036617','LECTORA DE SUEÑOS','-',
+70.00,40,120,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/planLector_1_zy0whd.jpg',3,1,10);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9333357444100','9357412102147','EL PLAN SECRETO DE MULAN','-',
+50.00,60,100,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815934/samples/ecommerce/EarthBook-catalogo/planLector_2_tmnr3g.jpg',3,1,10);
 
 INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
 VALUES ('93265874521368','9786169874523','LA EDUCACION DE LOS HIJOS COMO LOS PIMIENTOS DE PADRON','-',
