@@ -471,6 +471,7 @@ input[type="send"]:focus{
   height: 470px;
 }
 
+
 .btn-ver.btn-outline-success {
   --bs-success: #1dd2a2;
   color: var(--bs-teal);
