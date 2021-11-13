@@ -8,13 +8,13 @@
 	<div class="hero">
 		<div class="pos-titu">
 			<h1 class="title-cat">Categorías</h1>
-			
+
 			<div class="busc">
 				<div class="cont">
-				<div class="cont-der">
-					<input type="search" placeholder="..." title="Presione Esc para supender la búsqueda">
-					<button type="button" id="search">Buscar</button>
-				</div>
+					<div class="cont-der">
+						<input type="search" placeholder="..." title="Presione Esc para supender la búsqueda">
+						<button type="button" id="search">Buscar</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 			<div class="container">
 				<div class="row mt-2">
 
-					<div class="card-categoria-container">
+					<!--<div class="card-categoria-container">
 						<div class="card border-0">
 							<img src="img/cat/HistoriadelArte.jpg" class="card-img-top card-img-categoria"
 								alt="HistoriaDelArte">
@@ -137,6 +137,15 @@
 								alt="El tercer mundo después del sol">
 							<div class="card-body p-0 my-1">
 								<h5 class="card-title text-center">Terror</h5>
+							</div>
+						</div>
+					</div>-->
+
+					<div class="card-categoria-container" th:each="c : ${lstCategorias}">
+						<div class="card border-0" >
+							<img th:src="${c.urlImagen}" class="card-img-top card-img-categoria" alt="">
+							<div class="card-body p-0 my-1">
+								<h5 th:text="${c.descripcion}" class="card-title text-center"></h5>
 							</div>
 						</div>
 					</div>

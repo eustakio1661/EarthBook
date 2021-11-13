@@ -40,6 +40,8 @@ public class CategoriaController {
         return "listadocategoria";
     }
 	
+	
+	
 	@PostMapping("categoria/editar")
 	public String buscarCat(@ModelAttribute Categoria c, Model model) {
 		System.out.println();
