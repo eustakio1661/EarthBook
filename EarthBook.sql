@@ -170,11 +170,17 @@ INSERT INTO DISTRITOS VALUES (NULL,'SURQUILLO');
 INSERT INTO DISTRITOS VALUES (NULL,'VILLA EL SALVADOR');
 INSERT INTO DISTRITOS VALUES (NULL,'VILLA MARIA DEL TRIUNFO');
 
-INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('ARTE');
-INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('CIENCIAS');
-INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('NOVELA');
-INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('COMICS');
-INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('MANGA');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('ARTE', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814000/samples/ecommerce/EarthBook-Categoria/HistoriadelArte_gcubym.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('CIENCIAS', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814003/samples/ecommerce/EarthBook-Categoria/mujeres-cientificas_yqbdkg.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('NOVELA', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814004/samples/ecommerce/EarthBook-Categoria/Don-Quijote_lbjo7p.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('COMICS', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814001/samples/ecommerce/EarthBook-Categoria/marvel-comics_bsdr63.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('MANGA', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814001/samples/ecommerce/EarthBook-Categoria/satan_rsdxrg.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('COCINA', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814002/samples/ecommerce/EarthBook-Categoria/cocina_vwfkkj.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('TERROR', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814000/samples/ecommerce/EarthBook-Categoria/IT_srfxtq.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('JUVENIL', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814002/samples/ecommerce/EarthBook-Categoria/a-dos-metros-de-ti_pcedgs.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('NEGOCIOS', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814003/samples/ecommerce/EarthBook-Categoria/Business_udkdio.jpg');
+INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('PLAN LECTOR', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814000/samples/ecommerce/EarthBook-Categoria/ElGatoGarabato_jnih5l.jpg');
+
 
 INSERT INTO AUTORES (NOMBRE, BIOGRAFIA) VALUES ('CAMUS ALBERT', 'Fue un novelista, ensayista, dramaturgo, filósofo y periodista frances nacido en 1913.');
 INSERT INTO AUTORES (NOMBRE, BIOGRAFIA) VALUES ('SEISHI KISHIMOTO', 'Dibujante de manga japonés. Nacio en 1974. Es reconocido por ser el creador de 666 Satan');
@@ -188,6 +194,7 @@ INSERT INTO ESTADOS (DESCRIPCION) VALUES ('ACTIVO');
 INSERT INTO ESTADOS (DESCRIPCION) VALUES ('INACTIVO');
 
 SELECT * FROM LIBROS;
+SELECT * FROM CATEGORIAS;
 
 INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID_ED,ID_CAT)
 VALUES ('9788496130965','9788496130965','ARQUIMEDES','Arquímides de Siracusa vivió en tiempos de guerra, por lo que no debe extrañarnos que empleara parte de su genio en diseñar ingeniosas máquinas para la defensa de su ciudad natal.',
@@ -209,4 +216,42 @@ INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,ID_AU,ID
 VALUES ('9788437630410','9788437630410','ALEJANDRO JODOROWSKY','El cine es una de las muchas disciplinas artísticas que ha cultivado Alejandro Jodorowsky desde hace más de sesenta años. Personaje proteico, escritor (novelista, ensayista, dramaturgo…), autor y guionista de cómics',
 73.25,10,496,2,1,4);
 
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874521368','9786169874523','LA EDUCACION DE LOS HIJOS COMO LOS PIMIENTOS DE PADRON','-',
+80.00,15,139,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/ciencia_1_gviicm.jpg',1,1,2);
 
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265878989588','9786133396523','PITAGORAS Y SU TEOREMA EN 90 MINUTOS','-',
+60.00,23,100,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/ciencia_2_t6gdjn.jpg',2,1,2);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96665878989588','9786133390000','MAS RAPIDO QUE LA LUZ','-',
+95.00,26,70,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/comics_1_psiv8i.jpg',3,1,4);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96662678989588','9555533390000','LOS DESAFIOS DE LEX LUTHOR','-',
+90.00,26,70,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/comics_2_o3ftor.jpg',3,1,4);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96663263269578','9359687390000','LA COCINA DEL PERU','-',
+120.00,32,150,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/cocina_1_vic4ia.jpg',2,1,6);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874333988','9786100036523','COCINA CRIOLLA','-',
+80.00,15,139,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815932/samples/ecommerce/EarthBook-catalogo/cocina_2_xhk6aq.jpg',2,1,6);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874333688','9786100031123','CUENTOS CLASICOS JUVENILES','-',
+96.00,50,190,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/juvenil_1_kf5ysp.jpg',1,1,8);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('93265874333454','9789300036503','JOVENES AUNQUE SOBRADAMENTE CABREADOS','-',
+102.00,35,169,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/juvenil_2_tikgld.jpg',4,1,8);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('96319874333454','9789300036617','LECTORA DE SUEÑOS','-',
+70.00,40,120,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815933/samples/ecommerce/EarthBook-catalogo/planLector_1_zy0whd.jpg',3,1,10);
+
+INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
+VALUES ('9333357444100','9357412102147','EL PLAN SECRETO DE MULAN','-',
+50.00,60,100,'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636815934/samples/ecommerce/EarthBook-catalogo/planLector_2_tmnr3g.jpg',3,1,10);
