@@ -40,12 +40,13 @@ public class LibroController {
 	@GetMapping({"catalogo"})
 	public String catalogo(Model model) {
 		model.addAttribute("titulo", "Catalogo");
+		model.addAttribute("lstLibros", repoLibro.findAll());
 		return "catalogo";
 	}
 	
 	@GetMapping("categorias")
-	public String categorias(Model model) {
-		model.addAttribute("titulo", "Categorias");
+	public String listadoCategoria(Model model) {
+		model.addAttribute("lstCategorias", repoCat.findAll());
 		return "Categorias";
 	}
 	
