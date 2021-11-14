@@ -40,7 +40,7 @@ public class LibroController {
 	@GetMapping({"catalogo"})
 	public String catalogo(Model model) {
 		model.addAttribute("titulo", "Catalogo");
-		model.addAttribute("lstLibros", repoLibro.findAll());
+		model.addAttribute("lstLibros", repoLibro.findAllActive());
 		return "catalogo";
 	}
 	
@@ -97,7 +97,7 @@ public class LibroController {
 	@GetMapping("libro/listado")
     public String listado(Model model) {
         model.addAttribute("titulo", "Listado de libros");
-        model.addAttribute("lstLibros", repoLibro.findAll());
+        model.addAttribute("lstLibros", repoLibro.findAllActive());
         return "listadolibros";
     }
 	
