@@ -60,6 +60,13 @@
                                        </div>
                                     </div>
                                     <div class="col-6">
+                                       <label for="txtDni" class="form-label">DNI:</label>
+                                       <input type="text" class="form-control" placeholder="Ingrese DNI" th:field="*{dni}" required />
+                                       <div class="invalid-feedback">
+                                          ¡Se requiere un dni para el registro!'
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
                                        <label for="txtCorreo" class="form-label">Correo:</label>
                                        <input type="email" class="form-control" placeholder="Ingrese correo electrónico" th:field="*{correo}" required/>
                                        <div class="invalid-feedback">
@@ -89,6 +96,9 @@
                                  <p class="login">¿Ya tienes una cuenta? <a th:href="@{/login}">¡Click aquí!</a>
                                  </p>
                               </div>
+                              <div class="alert alert-success alert-dismissable" style="text-align: center;" th:if="${registroUsuario}" th:text="${registroUsuario}">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                 </div>
                            </div>
                         </div>
                      </div>

@@ -23,14 +23,14 @@ public class UsuarioController {
 		return "login";
 	}
 	
-	@PostMapping({"/validar"})
+	@PostMapping({"validar"})
 	public String validate(@ModelAttribute Usuario usuario, Model model) {
 		System.out.println(usuario);
 		Usuario u = repositoryUsr.findByCorreoAndClave(usuario.getCorreo(), usuario.getClave());
 		System.out.println(u);
 		if(u == null) {
 			model.addAttribute("usuario", new Usuario());
-			model.addAttribute("mensaje", "correo o clave incorrecto...!!!");
+			model.addAttribute("loginUsuario", "correo o clave incorrecto...!!!");
 			return "login";
 		
 		}else {
@@ -48,9 +48,16 @@ public class UsuarioController {
 	
 	@PostMapping({"/grabarRegistro"})
 	public String procesoGrabar(@ModelAttribute Usuario usuario, Model model) {
-		System.out.println(usuario);
-		repositoryUsr.save(usuario);
-		return "registro";
-	}	
-	
+		if(usuario!=null) {
+			usuario.setImg("https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png");
+			usuario.setRol(2);
+			usuario.setEstado(1);
+			repositoryUsr.save(usuario);
+			model.addAttribute("usuario", new Usuario());
+			model.addAttribute("registroUsuario", "Usuario registrado con éxito...!!!");
+			return "registro";
+		}else {			
+			return "registro";
+		}		
+	}		
 }
