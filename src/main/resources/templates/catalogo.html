@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" >
 
 <head th:replace="layout/layout::head"></head>
 
@@ -96,13 +96,13 @@
 			</div>
 
 
-			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3">
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3" >
+				<div class="col mt-3" align="center" th:each="l : ${lstLibros} ">
+					<div class="card-box cursor-pointer" >
+						<img th:src="${l.urlImagen}"  class="card-book-img-top" alt="...">
 						
 						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
+							<h6 class="text-break" th:text="${l.titulo}"></h6>
 							<div class="d-flex btn-group justify-content center" role="group"
 								aria-label="Basic example">
 								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
@@ -113,111 +113,7 @@
 					</div>
 				</div>
 				
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-3" align="center">
-					<div class="card-box cursor-pointer">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top" alt="...">
-						
-						<div class="card-body">
-							<h6 class="text-break">Nest Shaped Chair</h6>
-							<div class="d-flex btn-group justify-content center" role="group"
-								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
-
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 
 
@@ -242,9 +138,7 @@
 	<br>
 
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-		crossorigin="anonymous"></script>
+	<div th:replace="layout/layout :: scripts"></div>
 </body>
 
 </html>

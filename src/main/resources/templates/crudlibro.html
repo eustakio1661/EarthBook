@@ -27,7 +27,7 @@
 			      <option th:value="-1" selected th:text="'Seleccione Autor'"></option>
 			      <option th:each="a : ${lstAutores}"
 			              th:value="${a.id}"
-			              th:text="${a.descripcion}">
+			              th:text="${a.nombre}">
 			      </option>
 			    </select>
 			  </div>

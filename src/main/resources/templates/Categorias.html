@@ -23,124 +23,14 @@
 			<div class="container">
 				<div class="row mt-2">
 
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/HistoriadelArte.jpg" class="card-img-top card-img-categoria"
-								alt="HistoriaDelArte">
+					<div class="card-categoria-container" th:each="c : ${lstCategorias}">
+						<div class="card border-0" >
+							<img th:src="${c.urlImagen}" class="card-img-top card-img-categoria" alt="">
 							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Arte</h5>
+								<h5 th:text="${c.descripcion}" class="card-title text-center"></h5>
 							</div>
 						</div>
 					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/mujeres-cientificas.jpg" class="card-img-top card-img-categoria"
-								alt="MujeresCientificas">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Ciencias</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/cocina.jpg" class="card-img-top card-img-categoria" alt="Cocina">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Cocina</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/satan.jpg" class="card-img-top card-img-categoria" alt="Satan">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Manga</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/marvel-comics.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Comics</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/ElGatoGarabato.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Infantil</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/idiomas.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Idiomas</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/a-dos-metros-de-ti.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Juvenil</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/Don-Quijote.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Literatura</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/Business.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Negocios</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/JamesNoEstaCasa.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Plan Lector</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-categoria-container">
-						<div class="card border-0">
-							<img src="img/cat/IT.jpg" class="card-img-top card-img-categoria"
-								alt="El tercer mundo después del sol">
-							<div class="card-body p-0 my-1">
-								<h5 class="card-title text-center">Terror</h5>
-							</div>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</section>

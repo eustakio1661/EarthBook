@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:replace="layout/layout::head"></head>
+
+<body>
+
+	<nav th:replace="layout/layout :: nav"></nav>
+	<div class="container-fluid hero">
+		<div class="container py-5">
+			<div class="d-flex flex-column gap-2 flex-lg-row mt-3">
+				<div class="col-md-6">
+					<input class="form-control rounded-pill" type="text" placeholder="Buscar un libro, autor o género"
+						style="margin-left: -5px" />
+				</div>
+				<div class="col-md-3">
+					<select class="form-select rounded-pill" id="validationCustom04" required>
+						<option selected disabled value="">Categorias</option>
+						<option>Musica</option>
+						<option>Romance</option>
+						<option>Historia</option>
+						<option>Mangas</option>
+						<option>Recetas</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<button class="btn btn-rounded btn-success" type="submit">Buscar Libros</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid mt-4">
+		<div class="container shadow-lg bg-white px-3 py-4 rounded-25px">
+			<div class="row">
+				<div class="col-md-3" align="center">
+					<div class="card-show-book mb-3" style="width: auto;">
+						<img src="img/covers/mercaderes_del_espacio.jpg" class="img-fluid card-show-img" alt="...">
+						<div class="row">
+							<div class="col-12" align="center">
+								<p class="fw-bolder">SKU: 9788437630410</p>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<main class="col-md-6">
+					<div class="p-4">
+						<form class="row g-3">
+							<div class="col-12">
+								<h4 class="form-label">ARQUIMEDES</h4>
+							</div>
+							<div class="col-6">
+								<p class="fw-bolder">ISBN:</p>
+							</div>
+							<div class="col-6">
+								<p class="form-label">9788437630410</p>
+							</div>
+							<div class="col-6">
+								<p class="fw-bolder">Autor:</p>
+
+							</div>
+							<div class="col-6">
+								<p class="form-label">MOLDES DIEGO</p>
+
+							</div>
+							<div class="col-6">
+								<p class="fw-bolder"> Editorial:</p>
+
+							</div>
+							<div class="col-6">
+								<p class="form-label">RBA LIBROS</p>
+
+							</div>
+							<div class="col-6">
+								<p class="fw-bolder"> Paginas:</p>
+
+							</div>
+							<div class="col-6">
+								<p class="form-label">152</p>
+
+							</div>
+							<div class="col-6">
+								<p class="fw-bolder">Categoria:</p>
+
+							</div>
+							<div class="col-6">
+								<p class="form-label">CIENCIAS</p>
+
+							</div>
+							<div class="col-12">
+								<p class="fw-bolder">Descripcion:</p>
+								<p class="lh-sm form-label">
+									Arquímides de Siracusa vivió en tiempos de guerra, por lo que no debe extrañarnos
+									que empleara parte de su genio en diseñar ingeniosas máquinas para la defensa de su
+									ciudad natal.
+								</p>
+							</div>
+						</form>
+					</div>
+				</main>
+
+				<div class="col-md-3">
+					<div class="p-4">
+
+						<div class="col-12">
+							<p class="fs-4 fw-bolder">S/. 120.43</p>
+
+
+						</div>
+
+
+						<hr>
+						<div class="col-12">
+							<input type="number" value="1" min="1" max="10" step="1" />
+
+
+						</div>
+
+						<div class="d-grid gap-2 mt-3">
+							<button type="button" class="btn btn-seguir btn-outline-success"><i class="far fa-plus-square"></i> Agregar Compra</button>
+							<button type="button" class="btn btn-realizar btn-success"><i
+									class="fas fa-shopping-cart"></i> Realizar Compra</button>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+	<div th:replace="layout/layout :: scripts"></div>
+	<script>
+		$("input[type='number']").inputSpinner()
+	</script>
+</body>
+
+</html>
