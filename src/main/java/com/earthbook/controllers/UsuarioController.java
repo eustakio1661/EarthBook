@@ -1,7 +1,5 @@
 package com.earthbook.controllers;
 
-import javax.validation.constraints.AssertTrue;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +19,15 @@ public class UsuarioController {
 	@GetMapping({"/login"})
 	public String login(Model model) {
 		model.addAttribute("titulo", "Login");
+		model.addAttribute("usuaio", new Usuario());
 		return "login";
 	}
 	
 	@PostMapping({"/validar"})
 	public String validate(@ModelAttribute Usuario usuario, Model model) {
+		System.out.println(usuario);
 		Usuario u = repositoryUsr.findByCorreoAndClave(usuario.getCorreo(), usuario.getClave());
+		System.out.println(u);
 		if(u == null) {
 			model.addAttribute("usuario", new Usuario());
 			model.addAttribute("mensaje", "correo o clave incorrecto...!!!");
@@ -41,18 +42,15 @@ public class UsuarioController {
 	@GetMapping({"/registro"})
 	public String registro(Model model) {
 		model.addAttribute("titulo", "Registro");
+		model.addAttribute("usuario",new Usuario());
 		return "registro";
 	}
 	
 	@PostMapping({"/grabarRegistro"})
 	public String procesoGrabar(@ModelAttribute Usuario usuario, Model model) {
-		/*Usuario u = new Usuario();
-		u.setNombre(usuario.getNombre());
-		u.setApellido(usuario.getApellido());
-		u.setTelefono(usuario.getTelefono());
-		u.setCorreo(usuario.getCorreo());
-		u.setClave(encoder.encode(usuario.getClave()));*/
-		return "login";
+		System.out.println(usuario);
+		repositoryUsr.save(usuario);
+		return "registro";
 	}	
 	
 }
