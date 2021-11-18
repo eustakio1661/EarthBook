@@ -40,7 +40,7 @@ public class LibroController {
 	@GetMapping({"catalogo"})
 	public String catalogo(Model model) {
 		model.addAttribute("titulo", "Catalogo");
-		model.addAttribute("lstLibros", repoLibro.findAll());
+		model.addAttribute("lstLibros", repoLibro.findAllActive());
 		return "catalogo";
 	}
 	
@@ -97,7 +97,7 @@ public class LibroController {
 	@GetMapping("libro/listado")
     public String listado(Model model) {
         model.addAttribute("titulo", "Listado de libros");
-        model.addAttribute("lstLibros", repoLibro.findAll());
+        model.addAttribute("lstLibros", repoLibro.findAllActive());
         return "listadolibros";
     }
 	
@@ -121,6 +121,23 @@ public class LibroController {
         
         return "crudlibro";
     }
+	
+	@GetMapping("libro/eliminar/{id}")
+	public String eliminar(@PathVariable(value="id") String id, Model model) {
+	    
+	    if(!id.matches("[1-9]+")) return "redirect:/libro/listado";
+	    
+	    Libro libro = repoLibro.findById(Integer.parseInt(id)).orElse(null);
+	    libro.setIdEstado(2);
+	    
+	    repoLibro.save(libro);
+	    
+	    model.addAttribute("lstCategoria", repoCat.findAll());
+        model.addAttribute("lstEditoriales", repoEditorial.findAll());
+        model.addAttribute("lstAutores", repoAutor.findAll());
+	    
+        return "redirect:/libro/listado";
+	}
 	
 	@GetMapping("login")
 	public String login(Model model) {
