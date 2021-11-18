@@ -12,60 +12,87 @@
 	      
 		  <main class="col-md-8 mb-3">
 		   <div class="p-4 rounded-25px" style="background:#F4F4F4">
-			<form class="row g-3" th:action="@{/libro/guardar}" th:object="${libro}" method="POST">
+			<form class="row g-3 needs-validation" novalidate th:action="@{/libro/guardar}" th:object="${libro}" method="POST">
 			  <div class="col-12">
 			    <label for="txtISBN" class="form-label">ISBN</label>
-			    <input type="text" th:field="*{ISBN}" class="form-control" id="txtISBN">
+			    <input type="text" th:field="*{ISBN}" class="form-control" id="txtISBN" required pattern="[0-9]{13}" >
+				<div class="invalid-feedback">
+			        Ingrese un ISBN válido
+			    </div>
 			  </div>
 			  <div class="col-12">
 			    <label for="txtTitulo" class="form-label">Título</label>
-			    <input type="text" th:field="*{titulo}" class="form-control" id="txtTitulo">
+			    <input type="text" th:field="*{titulo}" class="form-control" id="txtTitulo" required>
+			    <div class="invalid-feedback">
+			        El campo título es obligatorio
+			    </div>
 			  </div>
 			  <div class="col-md-4">
 			    <label for="cboAutor" class="form-label">Autor</label>
-			    <select id="cboAutor" th:field="*{idAutor}" class="form-select">
-			      <option th:value="-1" selected th:text="'Seleccione Autor'"></option>
+			    <select id="cboAutor" th:field="*{idAutor}" class="form-select" required>
+			      <option selected hidden="hidden" th:value="-1" disabled  th:text="'Seleccione Autor'"></option>
 			      <option th:each="a : ${lstAutores}"
 			              th:value="${a.id}"
 			              th:text="${a.nombre}">
 			      </option>
 			    </select>
+			    <div class="invalid-feedback">
+			        Seleccione un autor válido
+			    </div>
 			  </div>
 			  <div class="col-md-4">
 			    <label for="cboCategoria" class="form-label">Categoría</label>
 			    <select id="cboCategoria" th:field="*{idCategoria}" class="form-select">
-			      <option th:value="-1" selected th:text="'Seleccione Categoria'"></option>
+			      <option selected disabled hidden="hidden" th:value="-1" th:text="'Seleccione Categoria'"></option>
 			      <option th:each="c : ${lstCategoria}"
 			              th:value="${c.id}"
 			              th:text="${c.descripcion}">
 			      </option>
 			    </select>
+			    <div class="invalid-feedback">
+			        Seleccione una categoría válida
+			    </div>
 			  </div>
 			  <div class="col-md-4">
 			    <label for="cboEditorial" class="form-label">Editorial</label>
 			    <select id="cboEditorial" th:field="*{idEditorial}" class="form-select">
-			      <option th:value="-1" selected th:text="'Seleccione Editorial'"></option>
+			      <option selected disabled hidden="hidden" th:value="-1" th:text="'Seleccione Editorial'"></option>
 			      <option th:each="e : ${lstEditoriales}"
 			              th:value="${e.id}"
 			              th:text="${e.descripcion}">
 			      </option>
 			    </select>
+			    <div class="invalid-feedback">
+			        Seleccione una editorial válida
+			    </div>
 			  </div>
 			  <div class="col-md-4">
 			    <label for="txtPaginas" class="form-label">Páginas</label>
-			    <input type="number" th:field="*{paginas}" class="form-control" id="txtPaginas" min="0">
+			    <input type="number" th:field="*{paginas}" class="form-control" id="txtPaginas" min="0" required>
+			    <div class="invalid-feedback">
+			        Se requiere un valor válido
+			    </div>
 			  </div>
 			  <div class="col-md-4">
 			    <label for="txtStock" class="form-label">Stock</label>
-			    <input type="number" th:field="*{cantidad}" class="form-control" id="txtStock" min="0" max="255">
+			    <input type="number" th:field="*{cantidad}" class="form-control" id="txtStock" min="0" max="255" required>
+			    <div class="invalid-feedback">
+			        Se requiere un valor válido
+			    </div>
 			  </div>
 			  <div class="col-md-4">
 			    <label for="txtPrecio" class="form-label">Precio</label>
-			    <input type="number" th:field="*{precio}" class="form-control" id="txtPrecio" min="0" step="any">
+			    <input type="number" th:field="*{precio}" class="form-control" id="txtPrecio" min="0" step="any" required>
+			    <div class="invalid-feedback">
+			        Se requiere un valor válido
+			    </div>
 			  </div>
 			  <div class="col-12">
 			    <label for="txtDescripcion" class="form-label">Descripción</label>
-  				<textarea class="form-control" th:field="*{descripcion}" id="txtDescripcion" rows="4"></textarea>
+  				<textarea class="form-control" th:field="*{descripcion}" id="txtDescripcion" rows="4" required></textarea>
+  				<div class="invalid-feedback">
+			        La descripción es obligatoria
+			    </div>
 			  </div>
 			  
 			  <div class="col-12">
@@ -79,5 +106,22 @@
     </div>
     
     <div th:replace="layout/layout :: scripts"></div>
+    <script>
+    (function () {
+    	  'use strict'
+    	  var forms = document.querySelectorAll('.needs-validation')
+    	  Array.prototype.slice.call(forms)
+    	    .forEach(function (form) {
+    	      form.addEventListener('submit', function (event) {
+    	        if (!form.checkValidity()) {
+    	          event.preventDefault()
+    	          event.stopPropagation()
+    	        }
+
+    	        form.classList.add('was-validated')
+    	      }, false)
+    	    })
+    	})()
+    </script>
 </body>
 </html>
