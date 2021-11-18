@@ -122,6 +122,7 @@ public class LibroController {
         return "crudlibro";
     }
 	
+
 	@GetMapping("libro/eliminar/{id}")
 	public String eliminar(@PathVariable(value="id") String id, Model model) {
 	    

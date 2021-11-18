@@ -1,162 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<head th:replace="layout/layout::head"></head>
-	<title>Iniciar Sesión</title>
-</head>
-
-<body class="log-reg">
-	<nav th:replace="layout/layout :: nav"></nav>
-	<!--wrapper-->
-	<div class="wrapper">
-		<div class="
-          section-authentication-signin
-          d-flex
-          align-items-center
-          justify-content-center
-          my-5 my-lg-5
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <head th:replace="layout/layout::head">
+   </head>
+   <title>Iniciar Sesión</title>
+   </head>
+   <body class="log-reg">
+      <nav th:replace="layout/layout :: nav"></nav>
+      <!--wrapper-->
+      <div class="wrapper">
+         <div class="
+            section-authentication-signin
+            d-flex
+            align-items-center
+            justify-content-center
+            my-5 my-lg-5
             ">
-			<div class="container-fluid">
-				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-					<div class="col mx-auto">
-						<div class="card">
-							<div class="card-body">
-								<div class="border p-4 rounded">
-									<div class="text-center">
-										<h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Registrar cuenta
-										</h1>
-									</div>
-									<div class="d-flex justify-content-center">
-										<img class="img-fluid" alt="BookStore Logo" src="img/logo/logo2.png"
-											style="width: 50%;">
-									</div>
-									<div class="login-separater text-center mb-4">
-										<hr />
-									</div>
-									<div class="form-body">
-										<form class="row g-3 needs-validation" action="#" method="POST" novalidate>
-											<div class="col-6">
-												<label for="txtNombre" class="form-label">Nombre
-													completo:</label>
-												<input type="text" class="form-control" placeholder="Ingrese nombre"
-													required />
-												<div class="invalid-feedback">
-													¡Se quiere un nombre para el registro!'
-												</div>
-											</div>
-											<div class="col-6">
-												<label for="txtTelefono" class="form-label">Apellido completo:</label>
-												<input type="text" class="form-control" placeholder="Ingrese apellido"
-													required />
-												<div class="invalid-feedback">
-													¡Se requiere un telefono para el registro!'
-												</div>
-											</div>
-											<div class="col-6">
-												<label for="txtTelefono" class="form-label">Teléfono:</label>
-												<input type="text" class="form-control" placeholder="Ingrese teléfono"
-													required />
-												<div class="invalid-feedback">
-													¡Se requiere un telefono para el registro!'
-												</div>
-											</div>
-											<div class="col-6">
-												<label for="txtCorreo" class="form-label">Correo:</label>
-												<input type="email" class="form-control"
-													placeholder="Ingrese correo electrónico" required />
-												<div class="invalid-feedback">
-													¡Se requiere un correo electrónico para el registro!'
-												</div>
-											</div>
-											<div class="col-6">
-												<label for="txtClave" class="form-label">Contraseña:</label>
-												<div class="input-group mb-3" id="show_hide_password">
-													<input type="password" class="form-control"
-														placeholder="Ingrese contraseña" aria-label="Ingrese contraseña"
-														aria-describedby="icon-hide" required />
-													<a href="#" class="input-group-text bg-transparent"
-														id="icon-hide"><i class="bx bx-hide"></i>
-													</a>
-													<div class="invalid-feedback">
-														¡Se requiere una contraseña para el registro!
-													</div>
-												</div>
-											</div>
-											<div class="col-6">
-												<label for="txtConfirmarClave" class="form-label">Confirmar
-													contraseña:</label>
-												<div class="input-group mb-3" id="show_hide_password">
-													<input type="password" class="form-control"
-														placeholder="Ingrese contraseña" aria-label="Ingrese contraseña"
-														aria-describedby="icon-hide" required />
-													<a href="#" class="input-group-text bg-transparent"
-														id="icon-hide"><i class="bx bx-hide"></i>
-													</a>
-													<div class="invalid-feedback">
-														¡Se requiere una contraseña para el registro!
-													</div>
-												</div>
-											</div>											
-										</form>
-										<div class="row g-2">
-											<button type="submit" class="btn btn-primary">
-												<i class="bx bxs-lock-open" href="#"></i>Registrarse
-											</button>
-											<p class="login">¿Ya tienes una cuenta? <a href="login">¡Click aquí!</a></p>								
-											</div>											
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-			crossorigin="anonymous"></script>
-		<script>
-			/*Function validation*/
-			(function () {
-				'use strict';
-				var forms = document.querySelectorAll('.needs-validation');
-				Array.prototype.slice.call(forms).forEach(function (form) {
-					form.addEventListener(
-						'submit',
-						function (event) {
-							if (!form.checkValidity()) {
-								event.preventDefault();
-								event.stopPropagation();
-							}
-							form.classList.add('was-validated');
-						},
-						false
-					);
-				});
-			})();
-			/*Function hide password*/
-			$(document).ready(function () {
-				$('#show_hide_password a').on('click', function (event) {
-					event.preventDefault();
-					if ($('#show_hide_password input').attr('type') == 'text') {
-						$('#show_hide_password input').attr('type', 'password');
-						$('#show_hide_password i').addClass('bx-hide');
-						$('#show_hide_password i').removeClass('bx-show');
-					} else if (
-						$('#show_hide_password input').attr('type') == 'password'
-					) {
-						$('#show_hide_password input').attr('type', 'text');
-						$('#show_hide_password i').removeClass('bx-hide');
-						$('#show_hide_password i').addClass('bx-show');
-					}
-				});
-			});
-		</script>
-</body>
-
+            <div class="container-fluid">
+               <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                  <div class="col mx-auto">
+                     <div class="card">
+                        <div class="card-body">
+                           <div class="border p-4 rounded">
+                              <div class="text-center">
+                                 <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Registrar cuenta
+                                 </h1>
+                              </div>
+                              <div class="d-flex justify-content-center">
+                                 <img class="img-fluid" alt="BookStore Logo" src="img/logo/logo2.png" style="width: 50%;">
+                              </div>
+                              <div class="login-separater text-center mb-4">
+                                 <hr />
+                              </div>
+                              <div class="form-body">
+                                 <div id="msg"></div>
+                                 <form class="row g-3 needs-validation" th:action="@{/grabarRegistro}"  th:object="${usuario}" method="POST" novalidate>
+                                    <div class="col-6">
+                                       <label for="txtNombre" class="form-label">Nombre
+                                       completo:</label>
+                                       <input type="text" class="form-control" placeholder="Ingrese nombre" th:field="*{nombre}" required/>
+                                       <div class="invalid-feedback">
+                                          ¡Se quiere un nombre para el registro!'
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
+                                       <label for="txtTelefono" class="form-label">Apellido completo:</label>
+                                       <input type="text" class="form-control" placeholder="Ingrese apellido" th:field="*{apellido}" required/>
+                                       <div class="invalid-feedback">
+                                          ¡Se requiere un telefono para el registro!'
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
+                                       <label for="txtTelefono" class="form-label">Teléfono:</label>
+                                       <input type="text" class="form-control" placeholder="Ingrese teléfono" th:field="*{telefono}" required />
+                                       <div class="invalid-feedback">
+                                          ¡Se requiere un telefono para el registro!'
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
+                                       <label for="txtDni" class="form-label">DNI:</label>
+                                       <input type="text" class="form-control" placeholder="Ingrese DNI" th:field="*{dni}" required />
+                                       <div class="invalid-feedback">
+                                          ¡Se requiere un dni para el registro!'
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
+                                       <label for="txtCorreo" class="form-label">Correo:</label>
+                                       <input type="email" class="form-control" placeholder="Ingrese correo electrónico" th:field="*{correo}" required/>
+                                       <div class="invalid-feedback">
+                                          ¡Se requiere un correo electrónico para el registro!'
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
+                                       <label for="pass1" class="form-label">Contraseña:</label>
+                                       <div class="input-group mb-3" id="show_hide_password">
+                                          <input type="password" class="form-control" placeholder="Ingrese contraseña"
+                                             aria-label="Ingrese contraseña" aria-describedby="icon-hide" th:field="*{clave}" id="pass1" required/>
+                                          </a>
+                                          <div class="invalid-feedback">
+                                             ¡Se requiere una contraseña para el registro!
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="row g-2">
+                                       <button type="submit" class="btn btn-primary">
+                                       <i class="bx bxs-lock-open"></i>Registrarse
+                                       </button>
+                                    </div>
+                              </div>
+                              </form>
+                              <br>
+                              <div class="row g-2">
+                                 <p class="login">¿Ya tienes una cuenta? <a th:href="@{/login}">¡Click aquí!</a>
+                                 </p>
+                              </div>
+                              <div class="alert alert-success alert-dismissable" style="text-align: center;" th:if="${registroUsuario}" th:text="${registroUsuario}">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <br>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+         crossorigin="anonymous"></script>
+      <script>
+         (function () {
+         'use strict'
+         var forms = document.querySelectorAll('.needs-validation')
+         Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+         })()
+          $(document).ready(function () {
+            $('#show_hide_password a').on('click', function (event) {
+              event.preventDefault();
+              if ($('#show_hide_password input').attr('type') == 'text') {
+                $('#show_hide_password input').attr('type', 'password');
+                $('#show_hide_password i').addClass('bx-hide');
+                $('#show_hide_password i').removeClass('bx-show');
+              } else if (
+                $('#show_hide_password input').attr('type') == 'password'
+              ) {
+                $('#show_hide_password input').attr('type', 'text');
+                $('#show_hide_password i').removeClass('bx-hide');
+                $('#show_hide_password i').addClass('bx-show');
+              }
+            });
+          });
+      </script>
+   </body>
 </html>
