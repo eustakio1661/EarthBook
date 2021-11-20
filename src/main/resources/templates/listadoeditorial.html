@@ -16,19 +16,18 @@
 			  <thead>
 			    <tr>
 			      <th class="bg-light-success" scope="col">Código</th>
-			      <th class="bg-light-success" scope="col">Nombre Categoría</th>
+			      <th class="bg-light-success" scope="col">Nombre Editorial</th>
 			      <th class="bg-light-success"></th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr th:each="c : ${lstCategorias}">
-			      <!--<td><img alt="" th:src="${c.urlImagen}" width="100px"></td>-->
-			      <td th:text="${c.id}"></td>
-			      <td th:text="${c.nombrecat}"></td>
+			    <tr th:each="e : ${lstEditoriales}">
+			      <td th:text="${e.id}"></td>
+			      <td th:text="${e.descripcion}"></td>
 			      <td>
-			        <a class="btn btn-danger me-2" onclick="return confirm('¿Desea eliminar la Categoría?')" th:href="'eliminar/'+${c.id}">
+			        <a class="btn btn-danger me-2" onclick="return confirm('¿Desea eliminar la Editorial?')" th:href="'eliminar/'+${e.id}">
 			        	<i class="fas fa-trash-alt"></i></a>	
-			        <a class="btn btn-success" th:href="'editar/'+${c.id}">
+			        <a class="btn btn-success" th:href="'editar/'+${e.id}">
 			        	<i class="fas fa-edit"></i></a>
 			      </td>
 			    </tr>

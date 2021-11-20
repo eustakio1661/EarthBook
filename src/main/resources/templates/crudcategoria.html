@@ -14,12 +14,11 @@
 
 				<main class="col-md-8 mb-3">
 					<div class="p-4 rounded-25px" style="background:#F4F4F4">
-						<form th:action="@{/categoria/grabar}" method="POST" th:object="${categoria}"
-							class="row g-3 needs-validation">
+						<form class="row g-3 needs-validation" novalidate  th:action="@{/categoria/grabar}" method="POST" th:object="${categoria}">
+							
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Categoría</label>
-								<input type="text" class="form-control" id="txtNombreCat" th:field="*{nombrecat}"
-									required>
+								<input type="text" class="form-control" id="txtNombreCat" th:field="*{nombrecat}" required>
 								<div class="invalid-feedback">
 									El campo Nombre es obligatorio
 								</div>
@@ -35,7 +34,7 @@
 
 							<div class="col-12">
 								<button id="btnresA" type="submit"
-									class="btn btn-rounded btn-shadow btn-lg btn-success float-end">Registrar</button>
+									class="btn btn-rounded btn-shadow btn-lg btn-success float-end" th:text="${accionBtn}"></button>
 							</div>
 						</form>
 
