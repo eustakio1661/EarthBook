@@ -121,7 +121,7 @@ public class LibroController {
 	@GetMapping("libro/editar/{id}")
     public String editar(@PathVariable(value="id") String id, Model model) {	    
 	    
-        if(!id.matches("[1-9]+")) return "redirect:/libro/listado";
+        if(!id.matches("[01-9]+")) return "redirect:/libro/listado";
 
         Libro libro = repoLibro.findById(Integer.parseInt(id)).orElse(null);  
 
@@ -143,7 +143,7 @@ public class LibroController {
 	@GetMapping("libro/eliminar/{id}")
 	public String eliminar(@PathVariable(value="id") String id, Model model) {
 	    
-	    if(!id.matches("[1-9]+")) return "redirect:/libro/listado";
+	    if(!id.matches("[01-9]+")) return "redirect:/libro/listado";
 	    
 	    Libro libro = repoLibro.findById(Integer.parseInt(id)).orElse(null);
 	    libro.setIdEstado(2);

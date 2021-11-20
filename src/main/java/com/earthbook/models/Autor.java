@@ -21,17 +21,23 @@ public class Autor {
     
     @Column(name = "IMAGEN")
     private String urlImagen;
+    
+    @Column(name = "ID_ES")
+    private int idEstado;
 
     public Autor() {
     }
+
     
-	public Autor(int id, String nombre, String biografia, String urlImagen) {
+	public Autor(int id, String nombre, String biografia, String urlImagen, int idEstado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.biografia = biografia;
 		this.urlImagen = urlImagen;
+		this.idEstado = idEstado;
 	}
+
 
 	public int getId() {
 		return id;
@@ -64,4 +70,13 @@ public class Autor {
 	public void setUrlImagen(String urlImagen) {
 		this.urlImagen = urlImagen;
 	}
+
+	public int getIdEstado() {
+		return idEstado;
+	}
+
+	public void setIdEstado(int idEstado) {
+		this.idEstado = idEstado;
+	}
+    
 }

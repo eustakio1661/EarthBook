@@ -14,10 +14,15 @@
 
 				<main class="col-md-8 mb-3">
 					<div class="p-4 rounded-25px" style="background:#F4F4F4">
-						<form th:action="@{grabar}" method="post" th:object="${categoria}" class="row g-3">
+						<form th:action="@{/categoria/grabar}" method="POST" th:object="${categoria}"
+							class="row g-3 needs-validation">
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Categoría</label>
-								<input type="text" class="form-control" id="txtNombreCat" th:field="*{nombrecat}">
+								<input type="text" class="form-control" id="txtNombreCat" th:field="*{nombrecat}"
+									required>
+								<div class="invalid-feedback">
+									El campo Nombre es obligatorio
+								</div>
 							</div>
 
 							<!--<input accept="image/*" id="archivo" name="archivo" type="file" value="" th:field="*{urlImagen}">-->
@@ -104,8 +109,25 @@
 		document.querySelector('#tableBooks').parentNode.classList.add('table-responsive');
 		console.log('HELP')
 	}, 500)
-
 </script>
+<script>
+    (function () {
+    	  'use strict'
+    	  var forms = document.querySelectorAll('.needs-validation')
+    	  Array.prototype.slice.call(forms)
+    	    .forEach(function (form) {
+    	      form.addEventListener('submit', function (event) {
+    	        if (!form.checkValidity()) {
+    	          event.preventDefault()
+    	          event.stopPropagation()
+    	        }
+
+    	        form.classList.add('was-validated')
+    	      }, false)
+    	    })
+    	})()
+    </script>
+
 
 
 
