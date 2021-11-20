@@ -118,7 +118,8 @@ VALUES ('9788433975157','9788433975157','VILLA TRISTE','Principios de los años 
 
 INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
 VALUES ('9788433979810','9788433979810','SON COSAS QUE PASAN','París, 1945. En la iglesia de Saint-Pierre-de-Chaillot, ubicada en uno de los barrios más elegantes de la ciudad, se celebra un funeral. La difunta es la princesa Natalie de Lusignan, duquesa de Sorrente, que ha fallecido demasiado joven.',
-62.00,15,168,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816082/DAWI/villa-triste-9788433975157-libro-ca01_ypt0cs.jpg',4,1,3);
+62.00,15,168,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816084/DAWI/cosas-pasan-9788433979810-libro-ca01_bvtxih.jpg',4,1,3);
+
 
 
 INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
