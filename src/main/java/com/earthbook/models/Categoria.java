@@ -13,18 +13,23 @@ public class Categoria {
 	@Column(name = "ID_CAT")
 	private int id;
 
-	@Column(name = "DESCRIPCION")
-	private String descripcion;
+
+    @Column(name = "DESCRIPCION")
+    private String nombrecat;
 
 	@Column(name = "IMAGEN")
 	private String urlImagen;
 
+    
+    
 	public Categoria() {
+		super();
 	}
 
-	public Categoria(int id, String descripcion, String urlImagen) {
+	public Categoria(int id, String nombrecat, String urlImagen) {
+		super();
 		this.id = id;
-		this.descripcion = descripcion;
+		this.nombrecat = nombrecat;
 		this.urlImagen = urlImagen;
 	}
 
@@ -36,12 +41,12 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getNombrecat() {
+		return nombrecat;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setNombrecat(String nombrecat) {
+		this.nombrecat = nombrecat;
 	}
 
 	public String getUrlImagen() {
@@ -52,4 +57,5 @@ public class Categoria {
 		this.urlImagen = urlImagen;
 	}
 
+   
 }

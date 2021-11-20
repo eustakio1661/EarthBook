@@ -17,13 +17,13 @@
 						<form th:action="@{grabar}" method="post" th:object="${categoria}" class="row g-3">
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Categoría</label>
-								<input type="text" class="form-control" id="txtNombreCat" th:field="*{descripcion}">
+								<input type="text" class="form-control" id="txtNombreCat" th:field="*{nombrecat}">
 							</div>
 
 							<!--<input accept="image/*" id="archivo" name="archivo" type="file" value="" th:field="*{urlImagen}">-->
 
 							<div col-md-6 col-sm-6 col-xs-6>
-								<input type="file" id="real-file" hidden="hidden" th:field="*{urlImagen}" />
+								<input type="file" id="real-file" hidden="hidden" />
 								<button type="button" id="custom-button">Subir Imagen...</button>
 								<span id="custom-text">No se eligió archivo.</span>
 							</div>

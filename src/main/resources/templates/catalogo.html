@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" >
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="layout/layout::head"></head>
 
@@ -8,25 +8,26 @@
 	<nav th:replace="layout/layout :: nav"></nav>
 	<div class="container-fluid hero">
 		<div class="container py-5">
-			<div class="d-flex flex-column gap-2 flex-lg-row mt-3">
-				<div class="col-md-6">
-					<input class="form-control rounded-pill" type="text" placeholder="Buscar un libro, autor o género"
-						style="margin-left: -5px" />
+			<form action="buscarLibCat" method="get">
+				<div class="d-flex flex-column gap-2 flex-lg-row mt-3">
+					<div class="col-md-6">
+						<input class="form-control rounded-pill" type="text"
+							placeholder="Buscar un libro, autor o género" style="margin-left: -5px" />
+					</div>
+					<div class="col-md-3">
+						<select class="form-select rounded-pill" name="idCategoria" id="validationCustom04" required>
+							<option  th:value="-1" selected th:text="Categorías... "></option>
+							<option th:each="c: ${lstCategorias}" th:value="${c.id}" th:text="${c.nombrecat}">
+							</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<button class="btn btn-rounded btn-success" type="submit">Buscar Libros</button>
+					</div>
 				</div>
-				<div class="col-md-3">
-					<select class="form-select rounded-pill" id="validationCustom04" required>
-						<option selected disabled value="">Categorias</option>
-						<option>Musica</option>
-						<option>Romance</option>
-						<option>Historia</option>
-						<option>Mangas</option>
-						<option>Recetas</option>
-					</select>
-				</div>
-				<div class="col-md-3">
-					<button class="btn btn-rounded btn-success" type="submit">Buscar Libros</button>
-				</div>
-			</div>
+			</form>
+
+
 		</div>
 	</div>
 	<section class="container-fluid mt-4">
@@ -43,7 +44,8 @@
 										<div class="fm-search">
 											<div class="mb-0">
 												<div class="input-group input-group-md"> <span
-														class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
+														class="input-group-text bg-transparent"><i
+															class="fas fa-search"></i></span>
 													<input type="text" class="form-control" placeholder="Ingresar ISBN">
 												</div>
 											</div>
@@ -60,7 +62,8 @@
 										<div class="fm-search">
 											<div class="mb-0">
 												<div class="input-group input-group-md"> <span
-														class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
+														class="input-group-text bg-transparent"><i
+															class="fas fa-search"></i></span>
 													<input type="text" class="form-control"
 														placeholder="Ingresar Autor">
 												</div>
@@ -78,7 +81,8 @@
 										<div class="fm-search">
 											<div class="mb-0">
 												<div class="input-group input-group-md"> <span
-														class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
+														class="input-group-text bg-transparent"><i
+															class="fas fa-search"></i></span>
 													<input type="text" class="form-control"
 														placeholder="Ingresar Editorial">
 												</div>
@@ -96,24 +100,26 @@
 			</div>
 
 
-			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3" >
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3">
 				<div class="col mt-3" align="center" th:each="l : ${lstLibros} ">
-					<div class="card-box cursor-pointer" >
-						<img th:src="${l.urlImagen}"  class="card-book-img-top" alt="...">
-						
+					<div class="card-box cursor-pointer">
+						<img th:src="${l.urlImagen}" class="card-book-img-top" alt="...">
+
 						<div class="card-body">
 							<h6 class="text-break" th:text="${l.titulo}"></h6>
 							<div class="d-flex btn-group justify-content center" role="group"
 								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i class="fas fa-location-arrow"></i> Ver</button>
+								<button type="button" class="btn btn-ver btn-outline-success"><i
+										class="fas fa-location-arrow"></i> Ver</button>
 
-								<button type="button" class="btn btn-comprar btn-success"><i class="fas fa-shopping-cart"></i> Comprar</button>
+								<button type="button" class="btn btn-comprar btn-success"><i
+										class="fas fa-shopping-cart"></i> Comprar</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				
-				
+
+
 			</div>
 
 

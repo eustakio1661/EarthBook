@@ -121,6 +121,7 @@ VALUES ('9788433979810','9788433979810','SON COSAS QUE PASAN','París, 1945. En 
 62.00,15,168,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816084/DAWI/cosas-pasan-9788433979810-libro-ca01_bvtxih.jpg',4,1,3);
 
 
+
 INSERT INTO LIBROS (ISBN,SKU,TITULO,DESCRIPCION,PRECIO,CANTIDAD,PAGINAS,IMAGEN,ID_AU,ID_ED,ID_CAT)
 VALUES ('9788417179052','9788417179052','YOUR NAME 1','El encuentro de dos jóvenes desencontrados. Nos situamos en Japón, un mes antes de la llegada de un cometa que pasa una vez cada mil años. Mitsuha, una estudiante de tercer año que vive en un pueblo en lo profundo de las montañas, pasa sus días con melancolía. ',
 36.00,23,200,'https://res.cloudinary.com/dfuuywyk9/image/upload/v1636816478/DAWI/your-name-1-9788417179052-libro-ca01_ae7xj2.jpg',4,1,5);
