@@ -45,6 +45,22 @@ public class LibroController {
 		return "catalogo";
 	}
 	
+
+	@GetMapping("catalogo/verLibro/{id}")
+	public String verlibro(@PathVariable(value="id") String id, Model model) {
+		
+		if(!id.matches("[01-9]+")) return "redirect:/catalogo";
+		
+		Libro libro = repoLibro.findById(Integer.parseInt(id)).orElse(null); 
+		
+		if(libro == null) return "redirect:/catalogo";
+
+		model.addAttribute("titulo", "Ver libro");
+		model.addAttribute("libro", libro);
+		return "verlibro";
+		
+	}
+	
 	@GetMapping("categorias")
 	public String listadoCategoria(Model model) {
 		model.addAttribute("lstCategorias", repoCat.findAll());
@@ -155,11 +171,7 @@ public class LibroController {
 		return "contactos";
 	}
 
-	@GetMapping({"verLibro"})
-	public String verlibro(Model model) {
-		model.addAttribute("titulo", "Ver Libro");
-		return "verlibro";
-	}
+	
 }
 
 

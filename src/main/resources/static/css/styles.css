@@ -455,18 +455,31 @@ input[type="send"]{
 }
 
 
-.btn-ver.btn-outline-success {
-  --bs-success: #1dd2a2;
-  color: var(--bs-teal);
-  border-color: var(--bs-teal);
+.card-show-book{
+  width: 100%;
+
+}
+
+.card-show-img{
+	 border-radius: 20px;
+	height: 470px;
+}
+
+
+.btn-ver{
+  background-color: #f4f6fa;
+  color: #20c997;
+  border-color: #20c997;
   border-radius: 100px 0px 0px 100px;
 }
 
-.btn-ver.btn-outline-success:hover {
+.btn-ver:hover{
   color: white;
-  background-color: var(--bs-teal);
-  border-color: var(--bs-teal);
+  background-color: #20c997;
+  border-color:  #20c997;
 }
+
+
 
 .btn-seguir.btn-outline-success {
   --bs-success: #1dd2a2;
@@ -491,6 +504,5 @@ input[type="send"]{
   border-color: var(--bs-teal);
 
 }
-.card-show-img{
-	 border-radius: 20px;
-}
+
+

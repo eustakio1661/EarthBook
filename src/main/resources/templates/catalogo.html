@@ -37,25 +37,8 @@
 					<div class="shadow p-2 mb-3" style="background: white; border-radius: 25px;">
 						<div class="card-body">
 							<div class="row align-items-center">
-								<div class="col-lg-4 col-xl-4">
-
-									<div class="card-body">
-										<p class="my-3">Buscar por ISBN</p>
-										<div class="fm-search">
-											<div class="mb-0">
-												<div class="input-group input-group-md"> <span
-														class="input-group-text bg-transparent"><i
-															class="fas fa-search"></i></span>
-													<input type="text" class="form-control" placeholder="Ingresar ISBN">
-												</div>
-											</div>
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-lg-4 col-xl-4">
+								
+								<div class="col-lg-6 col-xl-6">
 
 									<div class="card-body">
 										<p class="my-3">Buscar por Autor</p>
@@ -74,7 +57,7 @@
 									</div>
 
 								</div>
-								<div class="col-lg-4 col-xl-4">
+								<div class="col-lg-6 col-xl-6">
 
 									<div class="card-body">
 										<p class="my-3">Buscar por Editorial</p>
@@ -109,8 +92,9 @@
 							<h6 class="text-break" th:text="${l.titulo}"></h6>
 							<div class="d-flex btn-group justify-content center" role="group"
 								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i
-										class="fas fa-location-arrow"></i> Ver</button>
+								<!--Arreglar Boton :u-->
+								<a  class="btn btn-ver" th:href="'catalogo/verLibro/'+${l.id}" ><i
+										class="fas fa-location-arrow"></i> Ver</a>
 
 								<button type="button" class="btn btn-comprar btn-success"><i
 										class="fas fa-shopping-cart"></i> Comprar</button>
