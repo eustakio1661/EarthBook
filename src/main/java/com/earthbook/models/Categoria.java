@@ -14,42 +14,47 @@ public class Categoria {
     private int id;
 
     @Column(name = "DESCRIPCION")
-    private String descripcion;
+    private String nombrecat;
 
     @Column(name = "IMAGEN")
     private String urlImagen;
 
-    public Categoria() {
-    }
+    
+    
+	public Categoria() {
+		super();
+	}
 
-    public Categoria(int id, String descripcion, String urlImagen) {
-        this.id = id;
-        this.descripcion = descripcion;
-        this.urlImagen = urlImagen;
-    }
+	public Categoria(int id, String nombrecat, String urlImagen) {
+		super();
+		this.id = id;
+		this.nombrecat = nombrecat;
+		this.urlImagen = urlImagen;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+	public String getNombrecat() {
+		return nombrecat;
+	}
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+	public void setNombrecat(String nombrecat) {
+		this.nombrecat = nombrecat;
+	}
 
-    public String getUrlImagen() {
-        return urlImagen;
-    }
+	public String getUrlImagen() {
+		return urlImagen;
+	}
 
-    public void setUrlImagen(String urlImagen) {
-        this.urlImagen = urlImagen;
-    }
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
+	}
 
+   
 }

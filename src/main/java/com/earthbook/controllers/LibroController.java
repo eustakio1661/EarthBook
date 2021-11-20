@@ -41,6 +41,7 @@ public class LibroController {
 	public String catalogo(Model model) {
 		model.addAttribute("titulo", "Catalogo");
 		model.addAttribute("lstLibros", repoLibro.findAll());
+		model.addAttribute("lstCategorias", repoCat.findAll());
 		return "catalogo";
 	}
 	
