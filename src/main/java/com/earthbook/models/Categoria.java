@@ -9,15 +9,16 @@ import javax.persistence.Table;
 @Table(name = "CATEGORIAS")
 public class Categoria {
 
-    @Id
-    @Column(name = "ID_CAT")
-    private int id;
+	@Id
+	@Column(name = "ID_CAT")
+	private int id;
+
 
     @Column(name = "DESCRIPCION")
     private String nombrecat;
 
-    @Column(name = "IMAGEN")
-    private String urlImagen;
+	@Column(name = "IMAGEN")
+	private String urlImagen;
 
     
     
