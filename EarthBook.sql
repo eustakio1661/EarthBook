@@ -46,7 +46,9 @@ CREATE TABLE CATEGORIAS
 (
     ID_CAT       INT PRIMARY KEY AUTO_INCREMENT,
     DESCRIPCION VARCHAR(30) NOT NULL UNIQUE,
-    IMAGEN 	VARCHAR(1000) NOT NULL DEFAULT "https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png"
+    IMAGEN 	VARCHAR(1000) NOT NULL DEFAULT "https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png",
+    ID_ES       TINYINT     NOT NULL DEFAULT 1,
+    FOREIGN KEY (ID_ES) REFERENCES ESTADOS (ID_ES)
 );
 
 INSERT INTO CATEGORIAS (DESCRIPCION, IMAGEN) VALUES ('ARTE', 'https://res.cloudinary.com/dlvfkjwpg/image/upload/v1636814000/samples/ecommerce/EarthBook-Categoria/HistoriadelArte_gcubym.jpg');
@@ -65,7 +67,9 @@ CREATE TABLE AUTORES
     ID_AU       INT PRIMARY KEY AUTO_INCREMENT,
     NOMBRE VARCHAR(30) NOT NULL UNIQUE,
     BIOGRAFIA VARCHAR(120) NOT NULL UNIQUE,
-    IMAGEN 	VARCHAR(1000) NOT NULL DEFAULT "https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png"
+    IMAGEN 	VARCHAR(1000) NOT NULL DEFAULT "https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png",
+    ID_ES       TINYINT     NOT NULL DEFAULT 1,
+    FOREIGN KEY (ID_ES) REFERENCES ESTADOS (ID_ES)
 );
 
 INSERT INTO AUTORES (NOMBRE, BIOGRAFIA) VALUES ('CAMUS ALBERT', 'Fue un novelista, ensayista, dramaturgo, filósofo y periodista frances nacido en 1913.');
@@ -284,3 +288,5 @@ CREATE TABLE BOLETAS
     PRIMARY KEY (ID_BOL),
     FOREIGN KEY (ID_OD) REFERENCES DETALLE_ORDENES (ID_OD)
 );
+
+SELECT * FROM AUTORES;

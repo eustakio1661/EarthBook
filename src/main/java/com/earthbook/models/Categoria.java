@@ -20,17 +20,20 @@ public class Categoria {
 	@Column(name = "IMAGEN")
 	private String urlImagen;
 
-    
-    
+	@Column(name = "ID_ES")
+    private int idEstado;
+
+
 	public Categoria() {
 		super();
 	}
-
-	public Categoria(int id, String nombrecat, String urlImagen) {
+    
+	public Categoria(int id, String nombrecat, String urlImagen, int idEstado) {
 		super();
 		this.id = id;
 		this.nombrecat = nombrecat;
 		this.urlImagen = urlImagen;
+		this.idEstado = idEstado;
 	}
 
 	public int getId() {
@@ -44,7 +47,7 @@ public class Categoria {
 	public String getNombrecat() {
 		return nombrecat;
 	}
-
+	
 	public void setNombrecat(String nombrecat) {
 		this.nombrecat = nombrecat;
 	}
@@ -57,5 +60,12 @@ public class Categoria {
 		this.urlImagen = urlImagen;
 	}
 
+	public int getIdEstado() {
+		return idEstado;
+	}
+
+	public void setIdEstado(int idEstado) {
+		this.idEstado = idEstado;
+	}
    
 }
