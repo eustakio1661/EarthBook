@@ -47,13 +47,13 @@
 												<div class="input-group input-group-md"> <span
 														class="input-group-text bg-transparent"><i
 															class="fas fa-search"></i></span>
-													<input type="text" class="form-control"
-														placeholder="Ingresar Autor">
+													<select class="form-select" id="inputGroupSelect01">
+    <option th:value="-1" selected th:text="Seleccione... "></option>
+    <option th:each="c: ${lstAutores}" th:value="${c.id}" th:text="${c.nombre}"></option>
+  </select>
 												</div>
 											</div>
 										</div>
-
-
 									</div>
 
 								</div>

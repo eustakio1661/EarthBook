@@ -22,7 +22,8 @@ public class LibroController {
     
     @Autowired
     private ILibroRepository repoLibro;
-    
+    @Autowired
+	private IAutorRepository repoAut;
     @Autowired
     private IEditorialRepository repoEditorial;
     
@@ -42,6 +43,7 @@ public class LibroController {
 		model.addAttribute("titulo", "Catalogo");
 		model.addAttribute("lstCategorias", repoCat.findAll());
 		model.addAttribute("lstLibros", repoLibro.findAllActive());
+		model.addAttribute("lstAutores", repoAut.findAllActive());
 		return "catalogo";
 	}
 	
