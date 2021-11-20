@@ -36,7 +36,7 @@
                               </div>
                               <div class="form-body">
                                  <div id="msg"></div>
-                                 <form class="row g-3 needs-validation" th:action="@{/grabarRegistro}"  th:object="${usuario}" method="POST" novalidate>
+                                 <form class="row g-3 needs-validation" th:action="@{/grabarUsuario}"  th:object="${usuario}" method="POST" novalidate>
                                     <div class="col-6">
                                        <label for="txtNombre" class="form-label">Nombre
                                        completo:</label>
@@ -93,7 +93,7 @@
                               </form>
                               <br>
                               <div class="row g-2">
-                                 <p class="login">¿Ya tienes una cuenta? <a th:href="@{/login}">¡Click aquí!</a>
+                                 <p class="login">¿Ya tienes una cuenta? <a th:href="@{/SignIn}">¡Click aquí!</a>
                                  </p>
                               </div>
                               <div class="alert alert-success alert-dismissable" style="text-align: center;" th:if="${registroUsuario}" th:text="${registroUsuario}">

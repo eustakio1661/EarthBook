@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.earthbook.models.Usuario;
 import com.earthbook.repository.IUsuarioRepository;
@@ -16,7 +17,7 @@ public class UsuarioController {
 	@Autowired
 	private IUsuarioRepository repositoryUsr;
 	
-	@GetMapping({"/login"})
+	@GetMapping({"SignIn"})
 	public String login(Model model) {
 		model.addAttribute("titulo", "Login");
 		model.addAttribute("usuaio", new Usuario());
@@ -39,14 +40,14 @@ public class UsuarioController {
 		}
 	}
 	
-	@GetMapping({"/registro"})
+	@GetMapping({"SignUp"})
 	public String registro(Model model) {
 		model.addAttribute("titulo", "Registro");
 		model.addAttribute("usuario",new Usuario());
 		return "registro";
 	}
 	
-	@PostMapping({"/grabarRegistro"})
+	@PostMapping({"grabarUsuario"})
 	public String procesoGrabar(@ModelAttribute Usuario usuario, Model model) {
 		if(usuario!=null) {
 			usuario.setImg("https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png");
