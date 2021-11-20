@@ -9,7 +9,7 @@
 		<div class="pos-titu">
 			<h1 class="title-cat">Categorías</h1>
 
-			<form action="buscarCat" method="get">
+			<!--<form action="buscarCat" method="get">
 				<div class="col-md-5 col-lg-4 order-md-last" style="margin-top: 40px;">
 					<div class="input-group">
 						<select class="form-select" name="id" id="validationDefault04"
@@ -21,7 +21,7 @@
 						<button class="btn btn-outline-secondary" type="submit">Consultar</button>
 					</div>
 				</div>
-			</form>
+			</form>-->
 
 
 			<!--<form th:action="buscarCat"  method="get">
@@ -43,7 +43,7 @@
 				<div class="row mt-2">
 					<div class="card-categoria-container cursor-pointer" th:each="c : ${lstCategorias}">
 						<a class="text-decoration-none" style="color: black;" th:href="'consultaCatLibro/'+${c.id}">
-							<div class="card border-0">
+							<div  id="cont-img" class="card border-0">
 								<img th:src="${c.urlImagen}" class="card-img-top card-img-categoria" alt="">
 								<div class="card-body p-0 my-1">
 									<h5 th:text="${c.nombrecat}" class="card-title text-center"></h5>
