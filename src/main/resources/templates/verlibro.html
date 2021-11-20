@@ -32,14 +32,16 @@
 
 
 	<div class="container-fluid mt-4">
-		<div class="container shadow-lg bg-white px-3 py-4 rounded-25px">
+	
+		<div class="container shadow-lg bg-white px-3 py-4 rounded-25px" th:object="${libro}">
+		
 			<div class="row">
 				<div class="col-md-3" align="center">
 					<div class="card-show-book mb-3" style="width: auto;">
-						<img src="img/covers/mercaderes_del_espacio.jpg" class="img-fluid card-show-img" alt="...">
+						<img th:src="*{urlImagen}" class="img-fluid card-show-img" alt="...">
 						<div class="row">
 							<div class="col-12" align="center">
-								<p class="fw-bolder">SKU: 9788437630410</p>
+								<p class="fw-bolder">SKU: <span th:text="*{SKU}"></span> </p>
 
 							</div>
 
@@ -51,20 +53,20 @@
 					<div class="p-4">
 						<form class="row g-3">
 							<div class="col-12">
-								<h4 class="form-label">ARQUIMEDES</h4>
+								<h4 class="form-label" th:text="*{titulo}"></h4>
 							</div>
 							<div class="col-6">
 								<p class="fw-bolder">ISBN:</p>
 							</div>
 							<div class="col-6">
-								<p class="form-label">9788437630410</p>
+								<p class="form-label" th:text="*{ISBN}"></p>
 							</div>
 							<div class="col-6">
 								<p class="fw-bolder">Autor:</p>
 
 							</div>
 							<div class="col-6">
-								<p class="form-label">MOLDES DIEGO</p>
+								<p class="form-label" th:text="*{idAutor}"></p>
 
 							</div>
 							<div class="col-6">
@@ -72,7 +74,7 @@
 
 							</div>
 							<div class="col-6">
-								<p class="form-label">RBA LIBROS</p>
+								<p class="form-label" th:text="*{idEditorial}"></p>
 
 							</div>
 							<div class="col-6">
@@ -80,7 +82,7 @@
 
 							</div>
 							<div class="col-6">
-								<p class="form-label">152</p>
+								<p class="form-label" th:text="*{paginas}"></p>
 
 							</div>
 							<div class="col-6">
@@ -88,15 +90,13 @@
 
 							</div>
 							<div class="col-6">
-								<p class="form-label">CIENCIAS</p>
+								<p class="form-label" th:text="*{idCategoria}"></p>
 
 							</div>
 							<div class="col-12">
 								<p class="fw-bolder">Descripcion:</p>
-								<p class="lh-sm form-label">
-									Arquímides de Siracusa vivió en tiempos de guerra, por lo que no debe extrañarnos
-									que empleara parte de su genio en diseñar ingeniosas máquinas para la defensa de su
-									ciudad natal.
+								<p class="lh-sm form-label" th:text="*{descripcion}">
+									
 								</p>
 							</div>
 						</form>
@@ -107,15 +107,15 @@
 					<div class="p-4">
 
 						<div class="col-12">
-							<p class="fs-4 fw-bolder">S/. 120.43</p>
-
+							<p class="fs-4 fw-bolder" >S/. <span th:text="*{#numbers.formatDecimal(precio, 0, 'COMMA', 2, 'POINT')}"></span> </p>
+							
 
 						</div>
 
 
 						<hr>
 						<div class="col-12">
-							<input type="number" value="1" min="1" max="10" step="1" />
+							<input type="number" value="1" min="1" th:max="*{cantidad}" step="1" />
 
 
 						</div>
@@ -132,6 +132,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 	</div>
 

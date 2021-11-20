@@ -109,8 +109,9 @@
 							<h6 class="text-break" th:text="${l.titulo}"></h6>
 							<div class="d-flex btn-group justify-content center" role="group"
 								aria-label="Basic example">
-								<button type="button" class="btn btn-ver btn-outline-success"><i
-										class="fas fa-location-arrow"></i> Ver</button>
+								<!--Arreglar Boton :u-->
+								<a  class="btn btn-ver" th:href="'catalogo/verLibro/'+${l.id}" ><i
+										class="fas fa-location-arrow"></i> Ver</a>
 
 								<button type="button" class="btn btn-comprar btn-success"><i
 										class="fas fa-shopping-cart"></i> Comprar</button>
