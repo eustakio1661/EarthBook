@@ -40,6 +40,7 @@ public class LibroController {
 	@GetMapping({"catalogo"})
 	public String catalogo(Model model) {
 		model.addAttribute("titulo", "Catalogo");
+		model.addAttribute("lstCategorias", repoCat.findAll());
 		model.addAttribute("lstLibros", repoLibro.findAllActive());
 		return "catalogo";
 	}
