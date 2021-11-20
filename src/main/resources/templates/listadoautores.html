@@ -25,9 +25,10 @@
 			      <td><img alt="" th:src="${a.urlImagen}" width="100px"></td>
 			      <td th:text="${a.nombre}"></td>
 			      <td>
-			        <a class="btn btn-danger me-2"onclick="return confirm('¿Desea eliminar el Autor?')" th:href="'eliminar/'+${a.id}">
+			        <a class="btn btn-danger me-2" onclick="return confirm('¿Desea eliminar el Autor?')" th:href="'eliminar/'+${a.id}">
 			        	<i class="fas fa-trash-alt"></i></a>
-			        <a class="btn btn-success" th:href="'editar/'+${a.id}"><i class="fas fa-edit"></i></a>
+			        <a class="btn btn-success" th:href="'editar/'+${a.id}">
+			        	<i class="fas fa-edit"></i></a>
 			      </td>
 			    </tr>
 			  </tbody>

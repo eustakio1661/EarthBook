@@ -158,25 +158,25 @@ body.log-reg{
   position: relative;
 }
 
-/*
-.title-cat::after, .title-cat::before{
+
+/*.title-cat::after, .title-cat::before{
 	content:'';
 	position: absolute;
-	width: 100%;*/
-	/*width: 750px;*/
-	/*height: 5px;
+	width: 100%;
+	width: 750px;
+	height: 5px;
 	background-color: red;
 	top: 0.6em;
-}*/
+}
 
-/*.title-cat::before{
+.title-cat::before{
 	left: -800px;
 }
 
 .title-cat::after{
 	right: -800px;
-}*/
-/*
+}
+
 .title-cat::before{
 	left: -200px;
 }
@@ -321,10 +321,15 @@ input[type="send"]{
   width: 100%;
   height: 295px;
   transition: .3s;
+   border-radius: 10px;
 }
 
 .card-img-categoria:hover {
   filter: opacity(.6);
+}
+
+#cont-img{
+	  border-radius: 10px;
 }
 
 /******************************************************************************************************************/
