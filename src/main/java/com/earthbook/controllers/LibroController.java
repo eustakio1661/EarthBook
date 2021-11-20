@@ -48,7 +48,7 @@ public class LibroController {
 	}
 	
 
-	@GetMapping("catalogo/verLibro/{id}")
+	@GetMapping("/catalogo/verLibro/{id}")
 	public String verlibro(@PathVariable(value="id") String id, Model model) {
 		
 		if(!id.matches("[01-9]+")) return "redirect:/catalogo";
