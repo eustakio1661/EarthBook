@@ -2,6 +2,8 @@ package com.earthbook.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +13,7 @@ public class Autor {
 
     @Id
     @Column(name = "ID_AU")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     @Column(name = "NOMBRE")
@@ -21,17 +24,23 @@ public class Autor {
     
     @Column(name = "IMAGEN")
     private String urlImagen;
+    
+    @Column(name = "ID_ES")
+    private int idEstado;
 
     public Autor() {
     }
+
     
-	public Autor(int id, String nombre, String biografia, String urlImagen) {
+	public Autor(int id, String nombre, String biografia, String urlImagen, int idEstado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.biografia = biografia;
 		this.urlImagen = urlImagen;
+		this.idEstado = idEstado;
 	}
+
 
 	public int getId() {
 		return id;
@@ -64,4 +73,13 @@ public class Autor {
 	public void setUrlImagen(String urlImagen) {
 		this.urlImagen = urlImagen;
 	}
+
+	public int getIdEstado() {
+		return idEstado;
+	}
+
+	public void setIdEstado(int idEstado) {
+		this.idEstado = idEstado;
+	}
+    
 }

@@ -14,23 +14,27 @@
 
 				<main class="col-md-8 mb-3">
 					<div class="p-4 rounded-25px" style="background:#F4F4F4">
-						<form th:action="@{grabar}" method="post" th:object="${categoria}" class="row g-3">
+						<form class="row g-3 needs-validation" novalidate  th:action="@{/categoria/grabar}" method="POST" th:object="${categoria}">
+							
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Categoría</label>
-								<input type="text" class="form-control" id="txtNombreCat" th:field="*{descripcion}">
+								<input type="text" class="form-control" id="txtNombreCat" th:field="*{nombrecat}" required>
+								<div class="invalid-feedback">
+									El campo Nombre es obligatorio
+								</div>
 							</div>
 
 							<!--<input accept="image/*" id="archivo" name="archivo" type="file" value="" th:field="*{urlImagen}">-->
 
 							<div col-md-6 col-sm-6 col-xs-6>
-								<input type="file" id="real-file" hidden="hidden" th:field="*{urlImagen}" />
+								<input type="file" id="real-file" hidden="hidden" />
 								<button type="button" id="custom-button">Subir Imagen...</button>
 								<span id="custom-text">No se eligió archivo.</span>
 							</div>
 
 							<div class="col-12">
 								<button id="btnresA" type="submit"
-									class="btn btn-rounded btn-shadow btn-lg btn-success float-end">Registrar</button>
+									class="btn btn-rounded btn-shadow btn-lg btn-success float-end" th:text="${accionBtn}"></button>
 							</div>
 						</form>
 
@@ -104,8 +108,25 @@
 		document.querySelector('#tableBooks').parentNode.classList.add('table-responsive');
 		console.log('HELP')
 	}, 500)
-
 </script>
+<script>
+    (function () {
+    	  'use strict'
+    	  var forms = document.querySelectorAll('.needs-validation')
+    	  Array.prototype.slice.call(forms)
+    	    .forEach(function (form) {
+    	      form.addEventListener('submit', function (event) {
+    	        if (!form.checkValidity()) {
+    	          event.preventDefault()
+    	          event.stopPropagation()
+    	        }
+
+    	        form.classList.add('was-validated')
+    	      }, false)
+    	    })
+    	})()
+    </script>
+
 
 
 
