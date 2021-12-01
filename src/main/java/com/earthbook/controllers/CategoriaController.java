@@ -131,6 +131,5 @@ public class CategoriaController {
 		model.addAttribute("lstCategorias", repoCat.findAll());
 		return "Categorias";
 	}*/
-	
-	
+
 }
