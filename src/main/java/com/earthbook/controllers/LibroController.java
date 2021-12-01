@@ -63,7 +63,7 @@ public class LibroController {
 	
 	@GetMapping("categorias")
 	public String listadoCategoria(Model model) {
-		model.addAttribute("lstCategorias", repoCat.findAll());
+		model.addAttribute("lstCategorias", repoCat.findAllActive());
 		return "Categorias";
 	}
 	
