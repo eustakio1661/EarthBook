@@ -42,8 +42,8 @@ FROM earthbook.contactos]]>
 				<text><![CDATA[Earthbook - Recomendaciones]]></text>
 			</staticText>
 			<image>
-				<reportElement x="0" y="0" width="560" height="107" uuid="4a72d929-3543-4e6c-9994-9d1fbbbc4e54"/>
-				<imageExpression><![CDATA["banner.svg"]]></imageExpression>
+				<reportElement x="0" y="0" width="560" height="107" uuid="5593b786-286f-459e-9b54-42553b466ef0"/>
+				<imageExpression><![CDATA["banners/banner.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
