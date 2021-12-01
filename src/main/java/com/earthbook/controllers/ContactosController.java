@@ -19,7 +19,7 @@ public class ContactosController {
 	@GetMapping("contactos")
 	public String cargar(Model model) {
 		model.addAttribute("envContacto", new Contactos());
-		return "Contactos";
+		return "contactos";
 	}
 	
 	@PostMapping("/envio")
