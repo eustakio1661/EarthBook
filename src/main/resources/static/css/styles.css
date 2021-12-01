@@ -305,7 +305,8 @@ input[type="send"]{
 /************************************Imagenes-Categiría*********************************/
 
 .card-categoria-container {
-  width: 220px;
+  width: 264px;
+  /*width: 220px;*/
   margin: 0px 0px 10px 0px;
 }
 
@@ -319,7 +320,8 @@ input[type="send"]{
 
 .card-img-categoria {
   width: 100%;
-  height: 295px;
+  /*height: 295px;*/
+  height: 350px;
   transition: .3s;
    border-radius: 10px;
 }
