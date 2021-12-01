@@ -30,7 +30,7 @@ public class ContactosController {
 		}else {
 			repoContacto.save(contactos); 
 			model.addAttribute("envContacto", new Contactos());
-			model.addAttribute("mensaje", "Se realizo su envio");
+			model.addAttribute("mensaje", "Se envio su recomendacion");
 			return "contactos";
 		}
 
