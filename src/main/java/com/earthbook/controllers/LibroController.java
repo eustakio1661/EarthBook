@@ -1,5 +1,7 @@
 package com.earthbook.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.earthbook.models.Autor;
+import com.earthbook.models.Categoria;
+import com.earthbook.models.Editorial;
 import com.earthbook.models.Libro;
 import com.earthbook.repository.IAutorRepository;
 import com.earthbook.repository.ICategoriaRepository;
@@ -43,12 +49,13 @@ public class LibroController {
 		model.addAttribute("titulo", "Catalogo");
 		model.addAttribute("lstCategorias", repoCat.findAll());
 		model.addAttribute("lstLibros", repoLibro.findAllActive());
+		model.addAttribute("lstEditoriales", repoEditorial.findAllActive());
 		model.addAttribute("lstAutores", repoAut.findAllActive());
 		return "catalogo";
 	}
 	
 
-	@GetMapping("/catalogo/verLibro/{id}")
+	@GetMapping("catalogo/verLibro/{id}")
 	public String verlibro(@PathVariable(value="id") String id, Model model) {
 		
 		if(!id.matches("[01-9]+")) return "redirect:/catalogo";
@@ -57,10 +64,72 @@ public class LibroController {
 		
 		if(libro == null) return "redirect:/catalogo";
 
+		List<Autor> listaAutor = repoAut.findAllActive();
+		for (Autor a : listaAutor) {
+			if(a.getId() == libro.getIdAutor()) {
+				
+				 model.addAttribute("nombreAutor",a.getNombre());
+			}
+		}
+		
+		List<Editorial> listaEditorial = repoEditorial.findAllActive();
+		for (Editorial e : listaEditorial) {
+			if(e.getId() == libro.getIdEditorial()) {
+				
+				 model.addAttribute("nombreEditorial",e.getDescripcion());
+			}
+		}
+		
+		List<Categoria> listaCategoria = repoCat.findAll();
+		for (Categoria c : listaCategoria) {
+			if(c.getId() == libro.getIdCategoria()) {		
+				 model.addAttribute("nombreCategoria",c.getNombrecat());
+			}
+		}
+		
 		model.addAttribute("titulo", "Ver libro");
 		model.addAttribute("libro", libro);
 		return "verlibro";
 		
+	}
+	
+	
+	@GetMapping("catalogoAutor")
+	public String consultaLibroAutor(@RequestParam(name="idAutor") String idAutor, Model model) {
+		
+		if(!idAutor.matches("[1-9]+")) return "redirect:/catalogo";
+		
+		model.addAttribute("lstLibros", repoLibro.findByIdAutor(Integer.parseInt(idAutor)));
+		model.addAttribute("lstCategorias", repoCat.findAllActive());
+		model.addAttribute("lstEditoriales", repoEditorial.findAllActive());
+		model.addAttribute("lstAutores", repoAut.findAllActive());
+		return "catalogo";
+	}
+	
+	@GetMapping("catalogoEditorial")
+	public String consultaLibroEditorial(@RequestParam(name="idEditorial") String idEditorial, Model model) {
+		
+		if(!idEditorial.matches("[1-9]+")) return "redirect:/catalogo";
+		
+		model.addAttribute("lstLibros", repoLibro.findByIdEditorial(Integer.parseInt(idEditorial)));
+		model.addAttribute("lstCategorias", repoCat.findAllActive());
+		model.addAttribute("lstEditoriales", repoEditorial.findAllActive());
+		model.addAttribute("lstAutores", repoAut.findAllActive());
+		return "catalogo";
+	}
+	
+	
+
+	@GetMapping("buscarLibCat")
+	public String consultaLibCat(@RequestParam(name="idCategoria") String idCategoria, Model model) {
+		
+		if(!idCategoria.matches("[1-9]+")) return "redirect:/catalogo";
+		
+		model.addAttribute("lstLibros", repoLibro.findByIdCategoria(Integer.parseInt(idCategoria)));
+		model.addAttribute("lstCategorias", repoCat.findAllActive());
+		model.addAttribute("lstEditoriales", repoEditorial.findAllActive());
+		model.addAttribute("lstAutores", repoAut.findAllActive());
+		return "catalogo";
 	}
 	
 	@GetMapping("categorias")
@@ -68,6 +137,7 @@ public class LibroController {
 		model.addAttribute("lstCategorias", repoCat.findAll());
 		return "Categorias";
 	}
+	
 	
 	@GetMapping("libro/registrar")
 	public String registrar(Model model) {
