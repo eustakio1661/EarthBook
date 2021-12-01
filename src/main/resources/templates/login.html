@@ -47,6 +47,7 @@
                                     class="row g-3 needs-validation"
                                     th:action="@{/validar}"
                                     method="POST"
+                                    th:object="${usuario}"
                                     novalidate
                                     >
                                     <div class="col-12">
@@ -58,6 +59,7 @@
                                           class="form-control"
                                           placeholder="Ingrese correo electrónico"
                                           name="correo"
+                                          th:field="*{correo}"
                                           required
                                           />
                                        <div class="invalid-feedback">
@@ -77,6 +79,7 @@
                                              aria-label="Ingrese contraseña"
                                              aria-describedby="icon-hide"
                                              name="clave"
+                                             th:field="*{clave}"
                                              required
                                              />
                                           <a
