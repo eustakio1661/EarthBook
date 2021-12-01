@@ -20,36 +20,45 @@
 				<div>
 					<a class="navbar-brand" href="#" id="fontStyle"> 914-790-000 📱 </a>
 				</div>
-				
-				<img class ="card-enviar-container mt-3" src="https://avante.biz/wp-content/uploads/In-a-nutshell-wallpaper/In-a-nutshell-wallpaper27.jpg">
-				
+
+				<img class="card-enviar-container mt-3"
+					src="https://avante.biz/wp-content/uploads/In-a-nutshell-wallpaper/In-a-nutshell-wallpaper27.jpg">
+
 			</div>
 			<div class="col-md-10 mx-auto col-lg-5">
-				<form class="p-4 p-md-5 border rounded-3 bg-light">
-					<div class="form-floating mb-3">
-						<input type="send" class="form-control" id="send" placeholder="...">
-						<label>Nombre</label>
-					</div>
-					<div class="form-floating mb-3">
-						<input type="send" class="form-control" id="send" placeholder="...">
-						<label>Correo electrónico</label>
-					</div>
-					<div class="form-floating mb-3">
-						<textarea type="send" class="form-control" id="sendt" placeholder="Escriba titulo e información"></textarea>
-					</div>
-					<div class="checkbox mb-3">
-						<label>
-							<input type="checkbox" value="remember-me"> Grabar informacion
-						</label>
-					</div>
-					<div class="env">
-						<div class="cont">
-							<div class="cont-der">
-							<small class="text-muted">Click para aceptar nuestros terminos.</small>
-							<button type="button" id="sendb">Enviar</button>
-							</div>
+				<form class="p-4 p-md-5 border rounded-3 bg-light" th:action="@{/envio}" th:object="${envContacto} method="POST" novalidate>
+					<div class=" form-floating mb-3">
+					<input type="send" class="form-control" th:field="*{nombre}" id="send" placeholder="...">
+					<label>Nombre</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input type="send" class="form-control" th:field="*{correo}" id="send" placeholder="...">
+				<label>Correo electrónico</label>
+			</div>
+			<div class="form-floating mb-3">
+				<textarea type="send" class="form-control" th:field="*{mensaje}" id="sendt" maxlength="100"
+					data-length="100" required></textarea>
+				<label>Escriba titulo de la obra e información</label>
+			</div>
+			<div class="checkbox mb-3">
+				<label>
+					<input type="checkbox" value="remember-me"> Grabar informacion
+				</label>
+			</div>
+			<div class="env">
+				<div class="cont">
+					<div class="cont-der">
+						<small class="text-muted">Click para aceptar nuestros terminos.</small>
+						<div class="btn-group" role="group" aria-label="Basic example">
+							<button class="btn btn-primary" type="submit" id="sendb">Enviar</button>
+
 						</div>
 					</div>
+				</div>
+			</div>
+			<br>
+			<div class="alert alert-success alert-dismissable" id="success-alert" style="text-align: center;"
+				th:if="${mensaje}" th:text="${mensaje}">
 				</form>
 			</div>
 		</div>
@@ -57,6 +66,29 @@
 
 
 	<div th:replace="layout/layout :: scripts"></div>
+	<script>
+		(function () {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+				.forEach(function (form) {
+					form.addEventListener('submit', function (event) {
+						if (!form.checkValidity()) {
+							event.preventDefault()
+							event.stopPropagation()
+						}
+
+						form.classList.add('was-validated')
+					}, false)
+				})
+		})()
+
+
+	</script>
 
 </body>
 
