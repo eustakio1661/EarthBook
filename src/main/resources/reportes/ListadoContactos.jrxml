@@ -35,7 +35,7 @@ FROM earthbook.contactos]]>
 	<title>
 		<band height="107" splitType="Stretch">
 			<staticText>
-				<reportElement x="47" y="20" width="425" height="60" forecolor="#477546" uuid="ee5d4480-ad10-4b53-a9da-85809b4ab86e"/>
+				<reportElement x="80" y="20" width="400" height="60" forecolor="#477546" uuid="ee5d4480-ad10-4b53-a9da-85809b4ab86e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Bodoni MT Black" size="24"/>
 				</textElement>
@@ -49,7 +49,7 @@ FROM earthbook.contactos]]>
 	<columnHeader>
 		<band height="39" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="47" y="0" width="150" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="ee3fe412-6d74-4076-9341-bf34c2dc95c2">
+				<reportElement mode="Opaque" x="0" y="0" width="170" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="ee3fe412-6d74-4076-9341-bf34c2dc95c2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2426ac25-23d7-4a9d-b606-b2bafc836372"/>
 				</reportElement>
 				<box>
@@ -61,7 +61,7 @@ FROM earthbook.contactos]]>
 				<text><![CDATA[Contacto]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="197" y="0" width="150" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="9824a6b8-7218-48a2-8cba-4fc638525739">
+				<reportElement mode="Opaque" x="170" y="0" width="210" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="9824a6b8-7218-48a2-8cba-4fc638525739">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c848232e-7717-407d-8def-371c1b26c97c"/>
 				</reportElement>
 				<box>
@@ -73,7 +73,7 @@ FROM earthbook.contactos]]>
 				<text><![CDATA[Correo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="347" y="0" width="125" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="45ee2ed0-9fa5-43e7-b0c8-f7110c85a6f8">
+				<reportElement mode="Opaque" x="380" y="0" width="170" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="45ee2ed0-9fa5-43e7-b0c8-f7110c85a6f8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1f254b3-3358-44c9-94e0-b61b6a84d0c6"/>
 				</reportElement>
 				<box>
@@ -87,9 +87,9 @@ FROM earthbook.contactos]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="42" splitType="Stretch">
+		<band height="39" splitType="Stretch">
 			<textField>
-				<reportElement x="47" y="0" width="155" height="30" uuid="8871cb2f-dd77-4948-b5c5-640263fa0597">
+				<reportElement x="0" y="0" width="170" height="30" uuid="8871cb2f-dd77-4948-b5c5-640263fa0597">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2426ac25-23d7-4a9d-b606-b2bafc836372"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -98,7 +98,7 @@ FROM earthbook.contactos]]>
 				<textFieldExpression><![CDATA[$F{Contacto}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="202" y="0" width="150" height="30" uuid="ddb1ddac-648d-419e-8a84-d8d6f255a280">
+				<reportElement x="170" y="0" width="210" height="30" uuid="ddb1ddac-648d-419e-8a84-d8d6f255a280">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c848232e-7717-407d-8def-371c1b26c97c"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -107,7 +107,7 @@ FROM earthbook.contactos]]>
 				<textFieldExpression><![CDATA[$F{Correo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="0" width="120" height="30" uuid="c166e948-4166-4d50-ab3b-d5b3ec931767">
+				<reportElement x="380" y="0" width="170" height="30" uuid="c166e948-4166-4d50-ab3b-d5b3ec931767">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1f254b3-3358-44c9-94e0-b61b6a84d0c6"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -116,7 +116,7 @@ FROM earthbook.contactos]]>
 				<textFieldExpression><![CDATA[$F{Mensaje}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="47" y="30" width="425" height="1" uuid="064af2af-f1f5-435f-ae6c-f2b309a8dc96"/>
+				<reportElement x="0" y="30" width="550" height="1" uuid="064af2af-f1f5-435f-ae6c-f2b309a8dc96"/>
 			</line>
 		</band>
 	</detail>

@@ -265,7 +265,16 @@ NOM_CON VARCHAR (100) NOT NULL,
 CORREO_CON VARCHAR(100) NOT NULL,
 MSJ_CON VARCHAR (100) NOT NULL
 );
-INSERT INTO CONTACTOS VALUES (NULL,'Maria','mgalvez18@hotmail.com', 'Novela ligera 3');
+INSERT INTO CONTACTOS VALUES (NULL,'Maria','mgalvez18@hotmail.com', 'Shield Hero novela ligera');
+INSERT INTO CONTACTOS VALUES (NULL,'Gabriel','gabo92@hotmail.com', 'Chainsawman');
+INSERT INTO CONTACTOS VALUES (NULL,'Fernando','jako84@hotmail.com', 'La Fiesta del Chivo');
+INSERT INTO CONTACTOS VALUES (NULL,'Jose Miguel','killerduan@hotmail.com', 'Las Cuitas del Joven Werther');
+INSERT INTO CONTACTOS VALUES (NULL,'Mauricio','moebius20@hotmail.com', 'Dragon Ball manga');
+INSERT INTO CONTACTOS VALUES (NULL,'Run Run','zorrito@gmail.com', 'Inuyasha manga');
+INSERT INTO CONTACTOS VALUES (NULL,'Tatakae','eren51@hotmail.com', 'AoT');
+INSERT INTO CONTACTOS VALUES (NULL,'Samuel','estranuchi@gmail.com', 'Blue Seed manga');
+INSERT INTO CONTACTOS VALUES (NULL,'Diego','lozada1990@hotmail.com', 'Saber Marionette J novela ligera');
+INSERT INTO CONTACTOS VALUES (NULL,'Pablo','pablex@hotmail.com', 'Como ser un Lider');
 select * from contactos;
 
 CREATE TABLE ESTADO_ORDENES(
