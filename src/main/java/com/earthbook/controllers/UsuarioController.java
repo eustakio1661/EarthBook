@@ -1,6 +1,5 @@
 package com.earthbook.controllers;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +19,7 @@ public class UsuarioController {
 	private IUsuarioRepository repositoryUsr;
 	
 	@GetMapping({"SignIn"})
-	public String login(Model model, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		if(session != null) {
-			return "index";
-		}
+	public String login(Model model) {
 			model.addAttribute("titulo", "Login");
 			model.addAttribute("usuario", new Usuario());
 			return "login";
@@ -32,12 +27,13 @@ public class UsuarioController {
 	}
 	
 	@PostMapping({"validar"})
-	public String validate(@ModelAttribute Usuario usuario, Model model, HttpSession session ) {
+	public String validate(@ModelAttribute Usuario usuario, Model model, HttpSession session) {
 		Usuario u = repositoryUsr.findByCorreoAndClave(usuario.getCorreo(), usuario.getClave());
 		System.out.println(u);
 		if(u != null) {
-			session.setAttribute("usuario", u);	
-			System.out.println(session.toString());
+			session.setAttribute("sessionUsuario", u);	
+			session.setAttribute("sessionU",u.getNombre()+" "+u.getApellido());
+			model.addAttribute("usuario",u);
 			return "index";
 		}else {			
 			model.addAttribute("usuario", new Usuario());
@@ -54,25 +50,18 @@ public class UsuarioController {
 	}
 	
 	@PostMapping({"grabarUsuario"})
-	public String procesoGrabar(@ModelAttribute Usuario usuario, Model model, HttpSession session) {
+	public String procesoGrabar(@ModelAttribute Usuario usuario, Model model) {
 		if(usuario!=null) {
 			usuario.setImg("https://res.cloudinary.com/dfuuywyk9/image/upload/v1621437436/l60Hf_megote.png");
 			usuario.setRol(2);
 			usuario.setEstado(1);
 			repositoryUsr.save(usuario);
-			session.setAttribute("usuario", new Usuario());
+			model.addAttribute("usuario", new Usuario());
 			model.addAttribute("registroUsuario", "Usuario registrado con éxito...!!!");
 			return "registro";
 		}else {			
 			return "registro";
 		}		
 	}		
-	
-	@GetMapping({"/login"})
-	public String procesoLogout(Model model, HttpSession session) {
-		session.removeAttribute("usuario");
-		System.out.println(session);
-		model.addAttribute("titulo", "Login");
-		return "login";
-	}
+
 }
