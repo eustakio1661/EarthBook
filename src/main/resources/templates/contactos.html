@@ -28,11 +28,11 @@
 			<div class="col-md-10 mx-auto col-lg-5">
 				<form class="p-4 p-md-5 border rounded-3 bg-light" th:action="@{/envio}" th:object="${envContacto}" method="POST" novalidate>
 					<div class=" form-floating mb-3">
-					<input type="send" class="form-control" th:field="*{nombre}" id="send" placeholder="...">
+					<input type="text" class="form-control" th:field="*{nombre}" id="send" placeholder="...">
 					<label>Nombre</label>
 			</div>
 			<div class="form-floating mb-3">
-				<input type="send" class="form-control" th:field="*{correo}" id="send" placeholder="...">
+				<input type="text" class="form-control" th:field="*{correo}" id="send" placeholder="...">
 				<label>Correo electrónico</label>
 			</div>
 			<div class="form-floating mb-3">
