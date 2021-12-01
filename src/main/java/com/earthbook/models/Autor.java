@@ -42,6 +42,13 @@ public class Autor {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Autor [id=" + id + ", nombre=" + nombre + ", biografia=" + biografia + ", urlImagen=" + urlImagen
+				+ ", idEstado=" + idEstado + "]";
+	}
+
+
 	public int getId() {
 		return id;
 	}

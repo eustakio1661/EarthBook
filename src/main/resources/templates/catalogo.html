@@ -8,48 +8,58 @@
 	<nav th:replace="layout/layout :: nav"></nav>
 	<div class="container-fluid hero">
 		<div class="container py-5">
-			<form action="buscarLibCat" method="get">
-				<div class="d-flex flex-column gap-2 flex-lg-row mt-3">
-					<div class="col-md-6">
-						<input class="form-control rounded-pill" type="text"
-							placeholder="Buscar un libro, autor o género" style="margin-left: -5px" />
-					</div>
-					<div class="col-md-3">
-						<select class="form-select rounded-pill" name="idCategoria" id="validationCustom04" required>
-							<option  th:value="-1" selected th:text="Categorías... "></option>
-							<option th:each="c: ${lstCategorias}" th:value="${c.id}" th:text="${c.nombrecat}">
-							</option>
-						</select>
-					</div>
-					<div class="col-md-3">
-						<button class="btn btn-rounded btn-success" type="submit">Buscar Libros</button>
-					</div>
-				</div>
-			</form>
-
-
-		</div>
-	</div>
-	<section class="container-fluid mt-4">
-		<div class="container">
-			<div class="row">
+		<div class="row">
 				<div class="col-12">
 					<div class="shadow p-2 mb-3" style="background: white; border-radius: 25px;">
 						<div class="card-body">
 							<div class="row align-items-center">
-								
-								<div class="col-lg-6 col-xl-6">
+
+								<div class="col-lg-4 col-xl-4">
 
 									<div class="card-body">
 										<p class="my-3">Buscar por Autor</p>
 										<div class="fm-search">
 											<div class="mb-0">
-												<div class="input-group input-group-md"> <span
-														class="input-group-text bg-transparent"><i
-															class="fas fa-search"></i></span>
-													<input type="text" class="form-control"
-														placeholder="Ingresar Autor">
-												</div>
+
+												<form class="d-flex align-items-start" action="catalogoAutor"
+													method="get">
+													<button type="submit" class="btn btn-secondary"><i
+															class="fas fa-search"></i></button>
+													<div class="col-11">
+														<select class="form-select" name="idAutor"
+															id="inputGroupSelect01">
+															<option th:value="-1" selected th:text="Seleccione... ">
+															</option>
+															<option th:each="c: ${lstAutores}" th:value="${c.id}"
+																th:text="${c.nombre}"></option>
+														</select>
+													</div>
+												</form>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="col-lg-4 col-xl-4">
+
+									<div class="card-body">
+										<p class="my-3">Buscar por Editorial</p>
+										<div class="fm-search">
+											<div class="mb-0">
+												<form class="d-flex align-items-start" action="catalogoEditorial"
+													method="get">
+													<button type="submit" class="btn btn-secondary"><i
+															class="fas fa-search"></i></button>
+													<div class="col-11">
+														<select class="form-select" name="idEditorial" id="inputGroupSelect01">
+															<option th:value="-1" selected th:text="Seleccione... ">
+															</option>
+															<option th:each="c: ${lstEditoriales}" th:value="${c.id}"
+																th:text="${c.descripcion}"></option>
+														</select>
+													</div>
+												</form>
 											</div>
 										</div>
 
@@ -57,18 +67,24 @@
 									</div>
 
 								</div>
-								<div class="col-lg-6 col-xl-6">
+								<div class="col-lg-4 col-xl-4">
 
 									<div class="card-body">
-										<p class="my-3">Buscar por Editorial</p>
+										<p class="my-3">Buscar por Categorias</p>
 										<div class="fm-search">
 											<div class="mb-0">
-												<div class="input-group input-group-md"> <span
-														class="input-group-text bg-transparent"><i
-															class="fas fa-search"></i></span>
-													<input type="text" class="form-control"
-														placeholder="Ingresar Editorial">
-												</div>
+												<form class="d-flex align-items-start" action="buscarLibCat"
+													method="get">
+													<button type="submit" class="btn btn-secondary"><i
+															class="fas fa-search"></i></button>
+													<div class="col-11">
+														<select class="form-select" name="idCategoria" id="inputGroupSelect01">
+															<option th:value="-1" selected th:text="Seleccione... ">
+															</option>
+															<option th:each="c: ${lstCategorias}" th:value="${c.id}" th:text="${c.nombrecat}"></option>
+														</select>
+													</div>
+												</form>
 											</div>
 										</div>
 
@@ -81,6 +97,13 @@
 					</div>
 				</div>
 			</div>
+			
+
+		</div>
+	</div>
+	<section class="container-fluid mt-4">
+		<div class="container">
+			
 
 
 			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3">
@@ -93,8 +116,8 @@
 							<div class="d-flex btn-group justify-content center" role="group"
 								aria-label="Basic example">
 								<!--Arreglar Boton :u-->
-								<a  class="btn btn-ver" th:href="'catalogo/verLibro/'+${l.id}" ><i
-										class="fas fa-location-arrow"></i> Ver</a>
+								<a class="btn btn-ver" th:href="'catalogo/verLibro/'+${l.id}"><i
+										class="fas fa-location-arrow"></i> <span class="color-ver">Ver</span></a>
 
 								<button type="button" class="btn btn-comprar btn-success"><i
 										class="fas fa-shopping-cart"></i> Comprar</button>
