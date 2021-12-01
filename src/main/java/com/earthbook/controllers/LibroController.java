@@ -164,12 +164,6 @@ public class LibroController {
 		model.addAttribute("titulo", "Carrito");
 		return "carrito";
 	}
-	
-	@GetMapping("contactos")
-	public String contactos(Model model) {
-		model.addAttribute("titulo", "Contacto");
-		return "contactos";
-	}
 
 	
 }
