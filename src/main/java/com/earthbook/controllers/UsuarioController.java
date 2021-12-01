@@ -1,5 +1,7 @@
 package com.earthbook.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,24 +20,25 @@ public class UsuarioController {
 	
 	@GetMapping({"SignIn"})
 	public String login(Model model) {
-		model.addAttribute("titulo", "Login");
-		model.addAttribute("usuaio", new Usuario());
-		return "login";
+			model.addAttribute("titulo", "Login");
+			model.addAttribute("usuario", new Usuario());
+			return "login";
+			
 	}
 	
 	@PostMapping({"validar"})
-	public String validate(@ModelAttribute Usuario usuario, Model model) {
-		System.out.println(usuario);
+	public String validate(@ModelAttribute Usuario usuario, Model model, HttpSession session) {
 		Usuario u = repositoryUsr.findByCorreoAndClave(usuario.getCorreo(), usuario.getClave());
 		System.out.println(u);
-		if(u == null) {
+		if(u != null) {
+			session.setAttribute("sessionUsuario", u);	
+			session.setAttribute("sessionU",u.getNombre()+" "+u.getApellido());
+			model.addAttribute("usuario",u);
+			return "index";
+		}else {			
 			model.addAttribute("usuario", new Usuario());
 			model.addAttribute("loginUsuario", "correo o clave incorrecto...!!!");
 			return "login";
-		
-		}else {
-			model.addAttribute("usuario", u);		
-			return "index";
 		}
 	}
 	
@@ -60,4 +63,5 @@ public class UsuarioController {
 			return "registro";
 		}		
 	}		
+
 }
