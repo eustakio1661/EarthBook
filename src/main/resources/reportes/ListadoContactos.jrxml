@@ -35,16 +35,12 @@ FROM earthbook.contactos]]>
 	<title>
 		<band height="107" splitType="Stretch">
 			<staticText>
-				<reportElement x="160" y="20" width="410" height="60" forecolor="#477546" uuid="ee5d4480-ad10-4b53-a9da-85809b4ab86e"/>
+				<reportElement x="47" y="20" width="425" height="60" forecolor="#477546" uuid="ee5d4480-ad10-4b53-a9da-85809b4ab86e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Bodoni MT Black" size="24"/>
 				</textElement>
 				<text><![CDATA[Earthbook - Recomendaciones]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="0" width="560" height="107" uuid="5593b786-286f-459e-9b54-42553b466ef0"/>
-				<imageExpression><![CDATA["banners/banner.png"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>
