@@ -8,7 +8,7 @@
 	<nav th:replace="layout/layout :: nav"></nav>
 	<div class="container-fluid hero">
 		<div class="container py-5">
-		<div class="row">
+			<div class="row">
 				<div class="col-12">
 					<div class="shadow p-2 mb-3" style="background: white; border-radius: 25px;">
 						<div class="card-body">
@@ -52,7 +52,8 @@
 													<button type="submit" class="btn btn-secondary"><i
 															class="fas fa-search"></i></button>
 													<div class="col-11">
-														<select class="form-select" name="idEditorial" id="inputGroupSelect01">
+														<select class="form-select" name="idEditorial"
+															id="inputGroupSelect01">
 															<option th:value="-1" selected th:text="Seleccione... ">
 															</option>
 															<option th:each="c: ${lstEditoriales}" th:value="${c.id}"
@@ -78,10 +79,12 @@
 													<button type="submit" class="btn btn-secondary"><i
 															class="fas fa-search"></i></button>
 													<div class="col-11">
-														<select class="form-select" name="idCategoria" id="inputGroupSelect01">
+														<select class="form-select" name="idCategoria"
+															id="inputGroupSelect01">
 															<option th:value="-1" selected th:text="Seleccione... ">
 															</option>
-															<option th:each="c: ${lstCategorias}" th:value="${c.id}" th:text="${c.nombrecat}"></option>
+															<option th:each="c: ${lstCategorias}" th:value="${c.id}"
+																th:text="${c.nombrecat}"></option>
 														</select>
 													</div>
 												</form>
@@ -97,13 +100,13 @@
 					</div>
 				</div>
 			</div>
-			
+
 
 		</div>
 	</div>
 	<section class="container-fluid mt-4">
 		<div class="container">
-			
+
 
 
 			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3">
@@ -153,5 +156,20 @@
 
 	<div th:replace="layout/layout :: scripts"></div>
 </body>
+
+
+<script>
+	window.watsonAssistantChatOptions = {
+		integrationID: "a67282be-d009-4fbe-a5bb-5a1419ae4b1f", // The ID of this integration.
+		region: "us-south", // The region your integration is hosted in.
+		serviceInstanceID: "668d471b-fd0c-4301-bbdc-475071287bee", // The ID of your service instance.
+		onLoad: function (instance) {instance.render();}
+	};
+	setTimeout(function () {
+		const t = document.createElement('script');
+		t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		document.head.appendChild(t);
+	});
+</script>
 
 </html>
