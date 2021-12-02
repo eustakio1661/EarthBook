@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head"></head>
+<body>
+	<nav th:replace="layout/layout :: nav"></nav>
+	<div class="container-fluid mt-4">
+      <div class="container shadow-lg bg-white px-4 py-5 rounded-25px">
+      <div class="row">
+	      <aside class="col-md-4 mb-3">	      
+	       <div th:replace="components/components :: accordion-nav"></div>
+	      </aside>
+	      
+		  <main class="col-md-8 mb-3 mt-4">
+		   <div class="p-4 rounded-25px" style="background:#F4F4F4">
+			 <p>Hola <strong th:text="${usuario.nombre}"></strong> (<a th:href="@{/cerrarSesion}">Cerrar Sesion</a>)</p>
+                        <p>Desde el panel de su cuenta, puede ver sus pedidos recientes, administrar sus direcciones de envío y actualizar perfil.</p>
+		   </div>
+		  </main>
+      </div>		
+      </div>
+    </div>
+    
+    <div th:replace="layout/layout :: scripts"></div>
+</body>
+</html>

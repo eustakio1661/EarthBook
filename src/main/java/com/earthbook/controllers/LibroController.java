@@ -17,10 +17,12 @@ import com.earthbook.models.Autor;
 import com.earthbook.models.Categoria;
 import com.earthbook.models.Editorial;
 import com.earthbook.models.Libro;
+import com.earthbook.models.Usuario;
 import com.earthbook.repository.IAutorRepository;
 import com.earthbook.repository.ICategoriaRepository;
 import com.earthbook.repository.IEditorialRepository;
 import com.earthbook.repository.ILibroRepository;
+import com.earthbook.repository.IUsuarioRepository;
 
 @Controller()
 @SessionAttributes("libro")
@@ -38,6 +40,9 @@ public class LibroController {
     
     @Autowired
     private ICategoriaRepository repoCat;
+	@Autowired
+	private IUsuarioRepository repositoryUsr;
+
     
 	@GetMapping({"home", "", "/"})
 	public String home(Model model) {
@@ -55,6 +60,13 @@ public class LibroController {
 	}
 	
 
+	@GetMapping({"dashboard"})
+	public String dashboard(Model model) {
+
+		return "dashboard";
+	}
+	
+	
 	@GetMapping("catalogo/verLibro/{id}")
 	public String verlibro(@PathVariable(value="id") String id, Model model) {
 		

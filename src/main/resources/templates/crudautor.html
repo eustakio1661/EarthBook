@@ -17,17 +17,13 @@
 						<form class="row g-3 needs-validation" novalidate th:action="@{/autor/grabar}" method="POST" th:object="${autor}">
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Nombre Autor</label>
-								<input type="text" class="form-control" id="txtNombreAutor" th:field="*{nombre}">
+								<input type="text" class="form-control" id="txtNombreAutor" th:field="*{nombre}" required>
 							</div>
 							<div class="col-12">
 								<label for="txtNombre" class="form-label">Biografía</label>
-								<input type="text" class="form-control" id="txtBiogAutor" th:field="*{biografia}">
+								<input type="text" class="form-control" id="txtBiogAutor" th:field="*{biografia}" requiered>
 							</div>
-							<div col-md-6 col-sm-6 col-xs-6>
-								<input type="file" id="real-file" hidden="hidden"/>
-								<button type="button" id="custom-button">Subir Imagen...</button>
-								<span id="custom-text">No se eligió archivo.</span>
-							</div>
+							
 
 							<div class="col-12">
 								<button id="btnresA" type="submit"

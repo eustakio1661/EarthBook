@@ -34,17 +34,17 @@
 					</div>
 				</div>
 			</form>-->
-			
+
 		</div>
 		</br>
 
 		<section class="container-fluid mt-4">
-		
+
 			<div class="container">
 				<div class="row mt-2">
 					<div class="card-categoria-container cursor-pointer" th:each="c : ${lstCategorias}">
 						<a class="text-decoration-none" style="color: black;" th:href="'consultaCatLibro/'+${c.id}">
-							<div  id="cont-img" class="card border-0">
+							<div id="cont-img" class="card border-0">
 								<img th:src="${c.urlImagen}" class="card-img-top card-img-categoria" alt="">
 								<div class="card-body p-0 my-1">
 									<h5 th:text="${c.nombrecat}" class="card-title text-center"></h5>
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</section>
 		</br>
 		</br>
@@ -67,6 +67,20 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 		crossorigin="anonymous"></script>
+
+	<script>
+		window.watsonAssistantChatOptions = {
+			integrationID: "a67282be-d009-4fbe-a5bb-5a1419ae4b1f", // The ID of this integration.
+			region: "us-south", // The region your integration is hosted in.
+			serviceInstanceID: "668d471b-fd0c-4301-bbdc-475071287bee", // The ID of your service instance.
+			onLoad: function (instance) {instance.render();}
+		};
+		setTimeout(function () {
+			const t = document.createElement('script');
+			t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+			document.head.appendChild(t);
+		});
+	</script>
 
 
 </body>
