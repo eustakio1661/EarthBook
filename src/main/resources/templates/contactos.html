@@ -12,7 +12,9 @@
 				<h1 class="display-4 fw-bold lh-1 mb-3">Contáctenos</h1>
 				<p class="col-lg-10 fs-4">Estas buscando un titulo y no lo encuentras, escribenos y te ayudaremos.</p>
 				<div>
-					<a class="navbar-brand" href="https://www.google.com/maps/place/MERAKI/@-12.0544038,-77.0409955,3a,75y,356.53h,100.49t/data=!3m7!1e1!3m5!1sQYGuPoK28GJTR_Hxp3zXeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DQYGuPoK28GJTR_Hxp3zXeA%26cb_client%3Dsearch.gws-prod.gps%26w%3D86%26h%3D86%26yaw%3D8.634564%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656!4m8!1m2!2m1!1sJr.+Uruguay+514+Lima!3m4!1s0x9105c9e37a7e9671:0x14380bfb4bf2f586!8m2!3d-12.0542598!4d-77.0409699" id="fontStyle"> Jr. Uruguay 514 Lima 🌐 </a>
+					<a class="navbar-brand"
+						href="https://www.google.com/maps/place/MERAKI/@-12.0544038,-77.0409955,3a,75y,356.53h,100.49t/data=!3m7!1e1!3m5!1sQYGuPoK28GJTR_Hxp3zXeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DQYGuPoK28GJTR_Hxp3zXeA%26cb_client%3Dsearch.gws-prod.gps%26w%3D86%26h%3D86%26yaw%3D8.634564%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656!4m8!1m2!2m1!1sJr.+Uruguay+514+Lima!3m4!1s0x9105c9e37a7e9671:0x14380bfb4bf2f586!8m2!3d-12.0542598!4d-77.0409699"
+						id="fontStyle"> Jr. Uruguay 514 Lima 🌐 </a>
 				</div>
 				<div>
 					<a class="navbar-brand" href="#" id="fontStyle"> Pueblo Libre – 21 Lima 📧 </a>
@@ -20,9 +22,10 @@
 				<div>
 					<a class="navbar-brand" href="#" id="fontStyle"> 914-790-000 📱 </a>
 				</div>
-				
-				<img class ="card-enviar-container mt-3" src="https://avante.biz/wp-content/uploads/In-a-nutshell-wallpaper/In-a-nutshell-wallpaper27.jpg">
-				
+
+				<img class="card-enviar-container mt-3"
+					src="https://avante.biz/wp-content/uploads/In-a-nutshell-wallpaper/In-a-nutshell-wallpaper27.jpg">
+
 			</div>
 			<div class="col-md-10 mx-auto col-lg-5">
 				<form class="p-4 p-md-5 border rounded-3 bg-light">
@@ -35,7 +38,8 @@
 						<label>Correo electrónico</label>
 					</div>
 					<div class="form-floating mb-3">
-						<textarea type="send" class="form-control" id="sendt" placeholder="Escriba titulo e información"></textarea>
+						<textarea type="send" class="form-control" id="sendt"
+							placeholder="Escriba titulo e información"></textarea>
 					</div>
 					<div class="checkbox mb-3">
 						<label>
@@ -45,8 +49,8 @@
 					<div class="env">
 						<div class="cont">
 							<div class="cont-der">
-							<small class="text-muted">Click para aceptar nuestros terminos.</small>
-							<button type="button" id="sendb">Enviar</button>
+								<small class="text-muted">Click para aceptar nuestros terminos.</small>
+								<button type="button" id="sendb">Enviar</button>
 							</div>
 						</div>
 					</div>
@@ -59,5 +63,19 @@
 	<div th:replace="layout/layout :: scripts"></div>
 
 </body>
+
+<script>
+	window.watsonAssistantChatOptions = {
+		integrationID: "a67282be-d009-4fbe-a5bb-5a1419ae4b1f", // The ID of this integration.
+		region: "us-south", // The region your integration is hosted in.
+		serviceInstanceID: "668d471b-fd0c-4301-bbdc-475071287bee", // The ID of your service instance.
+		onLoad: function (instance) {instance.render();}
+	};
+	setTimeout(function () {
+		const t = document.createElement('script');
+		t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		document.head.appendChild(t);
+	});
+</script>
 
 </html>
