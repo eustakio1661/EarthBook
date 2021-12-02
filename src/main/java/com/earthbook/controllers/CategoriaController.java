@@ -112,15 +112,6 @@ public class CategoriaController {
 		return "catalogo";
 	}
 	
-	@GetMapping("buscarLibCat")
-	public String consultaLibCat(@RequestParam(name="idCategoria") String idCategoria, Model model) {
-		
-		if(!idCategoria.matches("[1-9]+")) return "redirect:/catalogo";
-		
-		model.addAttribute("lstLibros", repoLibro.findByIdCategoria(Integer.parseInt(idCategoria)));
-		model.addAttribute("lstCategorias", repoCat.findAll());
-		return "catalogo";
-	}
 	
 	/*@GetMapping("buscarCat")
 	public String consultaCat(@RequestParam(name="id") String id, Model model) {

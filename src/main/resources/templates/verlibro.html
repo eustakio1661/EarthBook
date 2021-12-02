@@ -8,23 +8,17 @@
 	<nav th:replace="layout/layout :: nav"></nav>
 	<div class="container-fluid hero">
 		<div class="container py-5">
-			<div class="d-flex flex-column gap-2 flex-lg-row mt-3">
-				<div class="col-md-6">
-					<input class="form-control rounded-pill" type="text" placeholder="Buscar un libro, autor o género"
-						style="margin-left: -5px" />
-				</div>
-				<div class="col-md-3">
-					<select class="form-select rounded-pill" id="validationCustom04" required>
-						<option selected disabled value="">Categorias</option>
-						<option>Musica</option>
-						<option>Romance</option>
-						<option>Historia</option>
-						<option>Mangas</option>
-						<option>Recetas</option>
-					</select>
-				</div>
-				<div class="col-md-3">
-					<button class="btn btn-rounded btn-success" type="submit">Buscar Libros</button>
+			<div class="row">
+				<div class="col-12">
+					<div class="shadow p-2 mb-3" style="background: white; border-radius: 25px;">
+						<div class="card-body">
+							<div class="row align-items-center">
+
+								<h5 class="text-center" style=""> «Si siempre intentas ser normal nunca descubrirás lo
+									extraordinario que puedes llegar a ser». – Maya Angelou.</h5>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -32,9 +26,9 @@
 
 
 	<div class="container-fluid mt-4">
-	
+
 		<div class="container shadow-lg bg-white px-3 py-4 rounded-25px" th:object="${libro}">
-		
+
 			<div class="row">
 				<div class="col-md-3" align="center">
 					<div class="card-show-book mb-3" style="width: auto;">
@@ -66,7 +60,7 @@
 
 							</div>
 							<div class="col-6">
-								<p class="form-label" th:text="*{idAutor}"></p>
+								<p class="form-label" th:text="${nombreAutor}"></p>
 
 							</div>
 							<div class="col-6">
@@ -74,7 +68,7 @@
 
 							</div>
 							<div class="col-6">
-								<p class="form-label" th:text="*{idEditorial}"></p>
+								<p class="form-label" th:text="${nombreEditorial}"></p>
 
 							</div>
 							<div class="col-6">
@@ -90,13 +84,13 @@
 
 							</div>
 							<div class="col-6">
-								<p class="form-label" th:text="*{idCategoria}"></p>
+								<p class="form-label" th:text="${nombreCategoria}"></p>
 
 							</div>
 							<div class="col-12">
 								<p class="fw-bolder">Descripcion:</p>
 								<p class="lh-sm form-label" th:text="*{descripcion}">
-									
+
 								</p>
 							</div>
 						</form>
@@ -107,8 +101,9 @@
 					<div class="p-4">
 
 						<div class="col-12">
-							<p class="fs-4 fw-bolder" >S/. <span th:text="*{#numbers.formatDecimal(precio, 0, 'COMMA', 2, 'POINT')}"></span> </p>
-							
+							<p class="fs-4 fw-bolder">S/. <span
+									th:text="*{#numbers.formatDecimal(precio, 0, 'COMMA', 2, 'POINT')}"></span> </p>
+
 
 						</div>
 
@@ -121,7 +116,8 @@
 						</div>
 
 						<div class="d-grid gap-2 mt-3">
-							<button type="button" class="btn btn-seguir btn-outline-success"><i class="far fa-plus-square"></i> Agregar Compra</button>
+							<button type="button" class="btn btn-seguir btn-outline-success"><i
+									class="far fa-plus-square"></i> Agregar Compra</button>
 							<button type="button" class="btn btn-realizar btn-success"><i
 									class="fas fa-shopping-cart"></i> Realizar Compra</button>
 						</div>
@@ -132,7 +128,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 	</div>
 
@@ -143,5 +139,19 @@
 		$("input[type='number']").inputSpinner()
 	</script>
 </body>
+
+<script>
+	window.watsonAssistantChatOptions = {
+		integrationID: "a67282be-d009-4fbe-a5bb-5a1419ae4b1f", // The ID of this integration.
+		region: "us-south", // The region your integration is hosted in.
+		serviceInstanceID: "668d471b-fd0c-4301-bbdc-475071287bee", // The ID of your service instance.
+		onLoad: function (instance) {instance.render();}
+	};
+	setTimeout(function () {
+		const t = document.createElement('script');
+		t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		document.head.appendChild(t);
+	});
+</script>
 
 </html>

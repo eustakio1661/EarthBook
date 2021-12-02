@@ -488,11 +488,17 @@ input[type="sendt"]{
 }
 
 .btn-ver:hover{
-  color: white;
   background-color: #20c997;
   border-color:  #20c997;
 }
 
+.btn-ver:hover i.fa-location-arrow{
+	 color: white!important;
+}
+
+.btn-ver:hover span.color-ver{
+	 color: white!important;
+}
 
 
 .btn-seguir.btn-outline-success {
