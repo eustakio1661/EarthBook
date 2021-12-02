@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout::head"></head>
+
+<body>
+	<nav th:replace="layout/layout :: nav"></nav>
+	<div class="container-fluid mt-4">
+		<div class="container shadow-lg bg-white px-4 py-5 rounded-25px">
+			<div class="row">
+				<aside class="col-md-4 mb-3">
+					<div th:replace="components/components :: accordion-nav"></div>
+				</aside>
+
+				<main class="col-md-8 mb-3">
+					<div class="p-4 rounded-25px" style="background:#F4F4F4">
+						<form class="row g-3 needs-validation" novalidate th:action="@{/autor/grabar}" method="POST" th:object="${autor}">
+							<div class="col-12">
+								<label for="txtNombre" class="form-label">Nombre Autor</label>
+								<input type="text" class="form-control" id="txtNombreAutor" th:field="*{nombre}" required>
+							</div>
+							<div class="col-12">
+								<label for="txtNombre" class="form-label">Biografía</label>
+								<input type="text" class="form-control" id="txtBiogAutor" th:field="*{biografia}" requiered>
+							</div>
+							
+
+							<div class="col-12">
+								<button id="btnresA" type="submit"
+									class="btn btn-rounded btn-shadow btn-lg btn-success float-end" th:text="${accionBtn}"></button>
+							</div>
+						</form>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+
+	<div th:replace="layout/layout :: scripts"></div>
+</body>
+
+<script>
+	const realFileBtn = document.getElementById("real-file");
+	const customBtn = document.getElementById("custom-button");
+	const customTxt = document.getElementById("custom-text");
+
+	customBtn.addEventListener("click", function () {
+		realFileBtn.click();
+	});
+
+	realFileBtn.addEventListener("change", function () {
+		if (realFileBtn.value) {
+			customTxt.innerHTML = realFileBtn.value.match(
+				/[\/\\]([\w\d\s\.\-\(\)]+)$/
+			)[1];
+		} else {
+			customTxt.innerHTML = "No file chosen, yet.";
+		}
+	});
+
+</script>
+
+</html>

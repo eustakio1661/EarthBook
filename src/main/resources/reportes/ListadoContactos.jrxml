@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListadoContactos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5aac9a3b-7bcd-4776-946c-64a9d6834163">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[ZWFydGhib29rLmNvbnRhY3RvcyBBUyAsNTQsNzEsYmM2ODk0OWMtNTM1YS00YjlmLWIzODYtZWZi
+NWFlZDg1YjVlOw==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Earthbook"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT earthbook.contactos.`NOM_CON` AS Contacto,
+	earthbook.contactos.`CORREO_CON` AS Correo,
+	earthbook.contactos.`MSJ_CON` AS Mensaje,
+	earthbook.contactos.`ID_CON` AS Codigo
+FROM earthbook.contactos]]>
+	</queryString>
+	<field name="Contacto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Contacto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contactos"/>
+	</field>
+	<field name="Correo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Correo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contactos"/>
+	</field>
+	<field name="Mensaje" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Mensaje"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contactos"/>
+	</field>
+	<field name="Codigo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contactos"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="107" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="20" width="400" height="60" forecolor="#477546" uuid="ee5d4480-ad10-4b53-a9da-85809b4ab86e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Black" size="24"/>
+				</textElement>
+				<text><![CDATA[Earthbook - Recomendaciones]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="170" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="ee3fe412-6d74-4076-9341-bf34c2dc95c2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2426ac25-23d7-4a9d-b606-b2bafc836372"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="2.0" lineColor="#5E8F6C"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Contacto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="170" y="0" width="210" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="9824a6b8-7218-48a2-8cba-4fc638525739">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c848232e-7717-407d-8def-371c1b26c97c"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="2.0" lineColor="#5E8F6C"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="380" y="0" width="170" height="30" forecolor="#000000" backcolor="#B4D69F" uuid="45ee2ed0-9fa5-43e7-b0c8-f7110c85a6f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1f254b3-3358-44c9-94e0-b61b6a84d0c6"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="2.0" lineColor="#5E8F6C"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Mensaje]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="170" height="30" uuid="8871cb2f-dd77-4948-b5c5-640263fa0597">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2426ac25-23d7-4a9d-b606-b2bafc836372"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Contacto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="0" width="210" height="30" uuid="ddb1ddac-648d-419e-8a84-d8d6f255a280">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c848232e-7717-407d-8def-371c1b26c97c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="170" height="30" uuid="c166e948-4166-4d50-ab3b-d5b3ec931767">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1f254b3-3358-44c9-94e0-b61b6a84d0c6"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Mensaje}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="30" width="550" height="1" uuid="064af2af-f1f5-435f-ae6c-f2b309a8dc96"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="76" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="20" y="35" width="100" height="30" forecolor="#3E593B" uuid="3548919d-9927-4c2c-a69d-69ec39d3c0fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="40" width="100" height="30" uuid="8cea286c-474b-4b69-b8c8-0c6ccb570d76"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pag." + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

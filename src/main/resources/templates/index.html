@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head"></head>
+
+  <body>
+    
+	<nav th:replace="layout/layout :: nav"></nav>
+    <div class="container-fluid hero">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-7 align-self-center">
+            <h1 class="title">
+              Aprende a leer y <br />
+              serás libre por siempre
+            </h1>
+			 <!--<a th:href="@{/SignIn}">¡Cerrar Sessión!</a>-->
+           <!--<span class="nav-item nav-link" style = "color:black" th:text="${session.sessionU}" th:unless="${session == null}">-->
+            <div class="d-flex flex-column gap-2 flex-lg-row mt-3">
+              <input
+                class="form-control rounded-pill form-control-lg"
+                type="text"
+                placeholder="Buscar un libro, autor o género"
+                style="margin-left: -5px"
+              />
+              <button class="btn btn-rounded btn-lg btn-success">Buscar</button>
+            </div>
+          </div>
+          <div class="col-5">
+            <img
+              class="img-fluid"
+              src="img/illustrations/undraw_book_lover_mkck.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container-fluid mt-4">
+      <div class="container">
+        <div class="d-flex justify-content-between">
+          <h3 class="category-title">Categorías</h3>
+          <a class="nav-link" href="categorias">Ver todos</a>
+        </div>
+        <div class="row mt-3">
+          <div class="col-2">
+            <div class="category-card card align-items-center justify-content-center rounded border-0">
+              <img class="card-img-top" src="img/illustrations/music.svg" alt="Arte ícono">
+              <div class="card-body p-0 my-1">
+                <h5 class="card-title text-center">Música</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="category-card card align-items-center justify-content-center rounded border-0">
+              <img class="card-img-top" src="img/illustrations/heart.svg" alt="Arte ícono">
+              <div class="card-body p-0 my-1">
+                <h5 class="card-title text-center">Romance</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="category-card card align-items-center justify-content-center rounded border-0">
+              <img class="card-img-top" src="img/illustrations/pen.svg" alt="Arte ícono">
+              <div class="card-body p-0 my-1">
+                <h5 class="card-title text-center">Historia</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="category-card card align-items-center justify-content-center rounded border-0">
+              <img class="card-img-top" src="img/illustrations/pentagon-down.svg" alt="Arte ícono">
+              <div class="card-body p-0 my-1">
+                <h5 class="card-title text-center">Mangas</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="category-card card align-items-center justify-content-center rounded border-0">
+              <img class="card-img-top" src="img/illustrations/bowl.svg" alt="Arte ícono">
+              <div class="card-body p-0 my-1">
+                <h5 class="card-title text-center">Recetas</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="category-card card align-items-center justify-content-center rounded border-0">
+              <img class="card-img-top" src="img/illustrations/airplane.svg" alt="Arte ícono">
+              <div class="card-body p-0 my-1">
+                <h5 class="card-title text-center">Viajes</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid mt-4">
+      <div class="container">
+        <div class="d-flex justify-content-between">
+          <h3 class="category-title">Más vendidos</h3>
+          <a class="nav-link" href="#">Ver todos</a>
+        </div>
+        <div class="row mt-3 gap-3 overflow-auto flex-nowrap justify-content-between">
+          <div class="card-book-container">
+            <div class="card border-0" >
+              <img src="img/covers/peru_y_chile.jpg" class="card-img-top card-img-book" alt="Perú y Chile">
+<!--                <div class="info">-->
+<!--                    <h1>Road</h1>-->
+<!--                    <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>-->
+<!--                    <button>Read More</button>-->
+<!--                </div>-->
+            </div>
+          </div>
+          <div class="card-book-container">
+            <div class="card border-0">
+              <img src="img/covers/el_tercer_mundo_despues_del_sol.jpg" class="card-img-top card-img-book" alt="El tercer mundo después del sol">
+            </div>
+          </div>
+          <div class="card-book-container">
+            <div class="card border-0">
+              <img src="img/covers/mercaderes_del_espacio.jpg" class="card-img-top card-img-book" alt="Mercaderes del espacio">
+            </div>
+          </div>
+          <div class="card-book-container">
+            <div class="card border-0">
+              <img src="img/covers/hijos_de_cain.jpg" class="card-img-top card-img-book" alt="Hijos de Caín">
+            </div>
+          </div>
+          <div class="card-book-container">
+            <div class="card border-0">
+              <img src="img/covers/lo_que_no_se_de_animales.jpg" class="card-img-top card-img-book" alt="Lo que no sé de los animales">
+            </div>
+          </div>
+          <div class="card-book-container">
+            <div class="card border-0">
+              <img src="img/covers/thai.jpg" class="card-img-top card-img-book" alt="Thai">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div th:replace="layout/layout :: scripts"></div>
+  </body>
+  
+  <script>
+	window.watsonAssistantChatOptions = {
+		integrationID: "a67282be-d009-4fbe-a5bb-5a1419ae4b1f", // The ID of this integration.
+		region: "us-south", // The region your integration is hosted in.
+		serviceInstanceID: "668d471b-fd0c-4301-bbdc-475071287bee", // The ID of your service instance.
+		onLoad: function (instance) {instance.render();}
+	};
+	setTimeout(function () {
+		const t = document.createElement('script');
+		t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		document.head.appendChild(t);
+	});
+</script>
+  
+</html>

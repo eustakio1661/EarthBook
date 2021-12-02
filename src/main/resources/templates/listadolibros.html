@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head"></head>
+<body>
+	<nav th:replace="layout/layout :: nav"></nav>
+	<div class="container-fluid mt-4">
+      <div class="container shadow-lg bg-white px-4 py-5 rounded-25px">
+      <div class="row">
+	      <aside class="col-md-4 mb-3">	      
+	       <div th:replace="components/components :: accordion-nav"></div>
+	      </aside>
+	      
+		  <main class="col-md-8 mb-3">
+		   <div class="p-3 rounded-25px" style="background:#F4F4F4">
+			<table id="tableBooks" class="table text-nowrap" style="background: white;">
+			  <thead>
+			    <tr>
+			      <th class="bg-light-success" scope="col">Id</th>
+			      <th class="bg-light-success" scope="col">Libro</th>
+			      <th class="bg-light-success" scope="col">Stock</th>
+			      <th class="bg-light-success" scope="col">Precio</th>
+			      <th class="bg-light-success"></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="l : ${lstLibros}">
+			      <th scope="row" th:text="${l.id}"></th>
+			      <td th:text="${l.titulo}"></td>
+			      <td th:text="${l.cantidad}"></td>
+			      <td th:text="${l.precio}"></td>
+			      <td>
+			        <a class="btn btn-danger me-2" onclick="return confirm('¿Desea eliminar el libro?')" th:href="'eliminar/'+${l.id}" >
+			        	<i class="fas fa-trash-alt"></i>
+			        </a>
+			        <a class="btn btn-success" th:href="'editar/'+${l.id}">
+			       		<i class="fas fa-edit"></i>
+			        </a>
+			      </td>
+			    </tr>			    
+			  </tbody>
+			</table>
+		   </div>
+		  </main>
+      </div>		
+      </div>
+    </div>
+    
+    <div th:replace="layout/layout :: scripts"></div>
+   	<script>
+	   	$(document).ready(function() {
+	   	    $('#tableBooks').DataTable({
+	   	    	responsive: true,
+	   	    	language: {
+	   	    		url: "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json"
+	   	    	}
+	   	    });	   	    
+	   	});
+	   	
+	   	setTimeout(()=> {
+		   	  document.querySelector('#tableBooks').parentNode.classList.add('table-responsive');
+		      console.log('HELP')
+		   	 }, 500)
+	   	
+   	</script>
+</body>
+</html>
